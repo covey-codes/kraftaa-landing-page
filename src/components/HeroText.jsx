@@ -22,7 +22,7 @@ const HeroText = () => {
 
         
         <div>
-          <button className="bg-gradient-to-r from-[#8407BA] to-[#6828B0] mt-4 text-white rounded-full px-6 py-3 hover:opacity-90 transition">
+          <button className="bg-gradient-to-r from-[#8407BA] to-[#6828B0] mt-4 text-white rounded-full w-[200px] px-6 py-5 hover:opacity-90 transition">
             Get Started
           </button>
         </div>
