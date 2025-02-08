@@ -6,7 +6,7 @@ const HowKraftaaWorksSection = () => {
   return (
     <div>
       {/* DESKTOP VIEW (Visible only on lg and above) */}
-      <div className="relative hidden lg:flex justify-center">
+      <div className="relative hidden lg:flex justify-center overflow-hidden">
         {/* Background SVGs */}
         <img
           src={svg}
@@ -40,9 +40,10 @@ const HowKraftaaWorksSection = () => {
       </div>
 
       {/* MOBILE VIEW (Visible only on small and medium screens) */}
-      <div className="bg-[#B1FA63] lg:hidden flex flex-col items-center text-center w-full py-10 px-5 border-4 border-[#1EAC23] rounded-2xl">
+      <div className="flex justify-center">
+      <div className="bg-gradient-to-b from-[#8407BA] to-[#6828B0] lg:hidden flex flex-col items-center text-center w-[80%] py-10 px-5 border-4 border-[#8407BA] rounded-2xl">
         {/* Header */}
-        <h2 className="text-3xl font-bold text-[#1D1A3A] mb-8">How Kraftaa Works</h2>
+        <h2 className="text-3xl font-bold text-[#B1FA63] mb-8">How Kraftaa Works</h2>
 
         {/* Images (Stacked on Mobile) */}
         <div className="flex flex-col items-center gap-6 mb-8">
@@ -51,10 +52,12 @@ const HowKraftaaWorksSection = () => {
         </div>
 
         {/* Button */}
-        <button className="text-white bg-[#1D1A3A] w-[80%] max-w-[300px] h-[50px] rounded-full">
+        <button className="text-white bg-[#B1FA63] w-[80%] max-w-[300px] h-[50px] rounded-full">
           Get Started
         </button>
       </div>
+      </div>
+      
     </div>
   );
 };

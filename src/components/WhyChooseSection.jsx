@@ -28,7 +28,8 @@ const WhyChoose = () => {
       </div>
 
       {/* Carousel Container */}
-      <div className="relative flex justify-center w-full max-w-[900px] mx-auto">
+      <div className='m-[-30px] overflow-hidden'>
+      <div className="relative flex justify-center max-w-[1000px] mx-auto">
         <div
           className="flex transition-transform duration-500"
           style={{
@@ -59,6 +60,8 @@ const WhyChoose = () => {
           Next
         </button>
       </div>
+      </div>
+      
     </div>
   );
 };
