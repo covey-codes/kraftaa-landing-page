@@ -39,20 +39,22 @@ const AnyServicesSection = () => {
 
             {/* Small Rounded Boxes */}
             <div className="flex flex-wrap gap-2 mt-4">
-              {[
-                "Generator repair", "Fridge repair", "CCTV installation", "Cobler", "Gardening", 
-                "Hair dresser", "Laundry", "Pedicure", "Electrician", "Plumber", 
-                "Barber", "Cleaner", "Tailor", "Baker", "Painter", "Welder", 
-                "Nail tech", "Cook", "Carpenter", "More..."
-              ].map((service, index) => (
-                <div 
-                  key={index} 
-                  className="bg-[#B1FA63] text-black px-3 py-1 rounded-full text-sm border border-black"
-                >
-                  {service}
-                </div>
-              ))}
-            </div>
+  {[
+    "Generator repair", "Fridge repair", "CCTV installation", "Cobler", "Gardening", 
+    "Hair dresser", "Laundry", "Pedicure", "Electrician", "Plumber", 
+    "Barber", "Cleaner", "Tailor", "Baker", "Painter", "Welder", 
+    "Nail tech", "Cook", "Carpenter", "More..."
+  ].map((service, index) => (
+    <div 
+      key={index} 
+      className={`px-3 py-1 rounded-full text-sm border border-black ${
+        service === "More..." ? "bg-white brightness-110" : "bg-[#B1FA63] text-black"
+      }`}
+    >
+      {service}
+    </div>
+  ))}
+</div>
           </div>
 
         </div>
