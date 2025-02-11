@@ -8,7 +8,7 @@ const FooterSection = () => {
             <img className='w-[200px]' src={logo} alt="logo" />
         </div>
         <div className='flex justify-center'>
-            <p className='text-xl text-[#B1FA63]'>Your personal Connection to Local Experts...</p>
+            <p className='text-1xl text-[#B1FA63]'>Your personal Connection to Local Experts...</p>
         </div>
         <div className='flex justify-center items-start text-white'>
             <ul className='m-5'>Blog</ul>
