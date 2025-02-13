@@ -74,7 +74,7 @@ const FindArtisanSection = () => {
         </div>
 
         {/* Empty div for mobile image */}
-        <div className="mt-10 w-full  flex justify-center items-center">
+        <div className="mt-10 w-[400px] ml-[120px] flex justify-center items-center">
           <img src={location} alt="" />
         </div>
       </div>

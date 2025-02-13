@@ -22,7 +22,7 @@ const WhyChoose = () => {
     <div className="px-6 py-12">
       {/* Header Text */}
       <div className="text-center mb-7">
-        <p className="text-xl md:text-3xl font-bold">
+        <p className="text-4xl md:text-3xl mb-[100px] font-bold">
           Why choose <span className="text-[#6828B0]">Kraftaa</span>
         </p>
       </div>

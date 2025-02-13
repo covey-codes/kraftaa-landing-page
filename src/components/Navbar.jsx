@@ -81,9 +81,9 @@ const Navbar = () => {
 
       
       <ul className="hidden md:flex space-x-10 text-white text-sm">
-        <li className="hover:underline cursor-pointer">Home</li>
-        <li className="hover:underline cursor-pointer">Services</li>
-        <li className="hover:underline cursor-pointer">Top Client</li>
+        <li className=" cursor-pointer hover:text-[#B1FA63]">Home</li>
+        <li className=" cursor-pointer hover:text-[#B1FA63]">Services</li>
+        <li className=" cursor-pointer hover:text-[#B1FA63]">Top Client</li>
       </ul>
 
       

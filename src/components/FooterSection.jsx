@@ -1,24 +1,36 @@
-import React from 'react'
+import React from 'react';
 import logo from "../assets/images/logo.png";
 
 const FooterSection = () => {
   return (
-    <div className='mt-[20px] bg-black h-[200px]'>
-        <div className='flex justify-center items-center flex-col'>
-            <img className='w-[200px]' src={logo} alt="logo" />
+    <>
+      {/* MOBILE FOOTER (Visible on small and medium screens) */}
+      <div className="lg:hidden bg-gradient-to-b from-[#8407BA] to-[#6828B0] h-[200px] flex flex-col items-center justify-center">
+        <img className="w-[200px]" src={logo} alt="logo" />
+        <p className="text-white text-1xl">Your personal <span className='text-[#B1FA63]'>Connection</span> to Local <span className='text-[#B1FA63]'>Experts...</span></p>
+        <div className="flex justify-center items-start text-white">
+          <ul className="m-5">Blog</ul>
+          <ul className="m-5">About Us</ul>
+          <ul className="m-5">Contact Us</ul>
+          <ul className="m-5">FAQ</ul>
+          <ul className="m-5">Privacy Policy</ul>
         </div>
-        <div className='flex justify-center'>
-            <p className='text-1xl text-[#B1FA63]'>Your personal Connection to Local Experts...</p>
-        </div>
-        <div className='flex justify-center items-start text-white'>
-            <ul className='m-5'>Blog</ul>
-            <ul className='m-5'>About Us</ul>
-            <ul className='m-5'>Contact Us</ul>
-            <ul className='m-5'>Faq</ul>
-            <ul className='m-5'>Privacy policy</ul>
-        </div>
-    </div>
-  )
-}
+      </div>
 
-export default FooterSection
+      {/* DESKTOP FOOTER (Visible only on large screens) */}
+      <div className="hidden lg:flex flex-col items-center bg-black h-[200px]">
+        <img className="w-[200px]" src={logo} alt="logo" />
+        <p className="text-[#B1FA63] text-1xl">Your personal Connection to Local Experts...</p>
+        <div className="flex justify-center items-start text-white">
+          <ul className="m-5">Blog</ul>
+          <ul className="m-5">About Us</ul>
+          <ul className="m-5">Contact Us</ul>
+          <ul className="m-5">FAQ</ul>
+          <ul className="m-5">Privacy Policy</ul>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default FooterSection;
