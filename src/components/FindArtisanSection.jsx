@@ -8,7 +8,7 @@ const FindArtisanSection = () => {
     <>
       {/* Desktop View */}
       <div
-        className="relative hidden lg:block bg-cover bg-center h-[800px] mb-[20px] mt-[-190px] w-full"
+        className="relative hidden lg:block bg-cover bg-center h-[800px] mb-[20px] mt-[-370px] w-full"
         style={{
           backgroundImage: `url(${bgImage})`,
         }}
@@ -27,12 +27,12 @@ const FindArtisanSection = () => {
               </div>
             </div>
 
-            <div className="items-center text-center">
-              <p className="text-4xl font-bold m-10">
+            <div className=" text-center">
+              <p className="text-4xl lg:text-6xl font-bold m-10">
                 Find Artisan by <span className="text-[#6828B0]">Location</span>
               </p>
 
-              <p className="text-2xl">
+              <p className="text-2xl lg:text-3xl">
                 You can easily find skilled artisans <br />
                 based on your location. Whether <br />
                 you're at home or at work, simply <br />

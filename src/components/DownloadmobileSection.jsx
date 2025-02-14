@@ -17,14 +17,14 @@ const DownloadmobileSection = () => {
           <img src={kraftaa} alt="" />
         </div>
         <div>
-          <p className="text-black text-1xl">Download Kraftaa mobile app for easy tracking...</p>
+          <p className="text-black font-normal md:text-2xl md:font-medium sm:text-xl">Download Kraftaa mobile app for easy tracking...</p>
         </div>
         <div className="mt-[40px] flex justify-center w-full">
           <div className="w-[300px] hidden">
             <img src={mobile} alt="" />
           </div>
 
-          <div className="w-[300px] items-center flex flex-col justify-center">
+          <div className="w-[280px] items-center flex flex-col justify-center">
             <img className="m-55" src={googleplay} alt="" />
             <img className="m-10" src={applestore} alt="" />
           </div>

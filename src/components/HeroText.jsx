@@ -10,12 +10,12 @@ const HeroText = () => {
           <img src={design1} alt="Design 1" />
         </div>
 
-        <div className="w-[350px]">
+        <div className="w-[450px]">
           <img src={design2} alt="Design 2" />
         </div>
 
         <div className="text-center mt-2">
-          <p className="text-lg font-semibold">Your Personal Connection to Local Experts</p>
+          <p className="text-xs lg:text-[1.45rem] sm:text-xl md:text-2xl text-[#5C6378] font-semibold">Your Personal Connection to Local Experts</p>
         </div>
 
         <div>

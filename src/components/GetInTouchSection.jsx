@@ -5,7 +5,7 @@ const GetInTouchSection = () => {
     <div className="px-6 py-12">
       
       <div className="text-center mb-7">
-        <p className="text-xl md:text-3xl font-bold">
+        <p className="text-2xl md:text-5xl text-ink  sm:text-3xl font-bold">
           Get in touch with the best{" "}
           <span className="text-[#6828B0]">Artisans</span>
           <br />
@@ -14,7 +14,7 @@ const GetInTouchSection = () => {
         </p>
       </div>
       
-      <div className="mx-auto w-full sm:w-[105%] md:w-[85%] lg:w-[70%] xl:w-[60%] max-h-[1300px]">
+      <div className="mx-auto w-full sm:w-[105%] md:w-[85%] lg:w-[90%] xl:w-[(90%] max-h-[1300px]">
   <img
     src={dashboard}
     alt="Dashboard"

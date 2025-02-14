@@ -32,7 +32,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="flex justify-between h-16 mt-5 mx-5 rounded-full shadow-lg items-center px-10 py-5 bg-[#6828B0]">
+    <nav className="flex justify-between h-[80px] mt-5 mx-5 rounded-full shadow-lg items-center px-10 py-5 bg-[#6828B0]">
      
       <img src={logo} alt="Logo" className="h-12" />
 
@@ -80,14 +80,14 @@ const Navbar = () => {
       </div>
 
       
-      <ul className="hidden md:flex space-x-10 text-white text-sm">
+      <ul className="hidden md:flex space-x-10 text-white text-base font-bold">
         <li className=" cursor-pointer hover:text-[#B1FA63]">Home</li>
         <li className=" cursor-pointer hover:text-[#B1FA63]">Services</li>
         <li className=" cursor-pointer hover:text-[#B1FA63]">Top Client</li>
       </ul>
 
       
-      <button className="hidden md:block px-6 py-2 bg-black text-green-500 font-semibold text-sm rounded-full hover:bg-gray-800">
+      <button className="hidden md:block px-6 py-2 bg-black text-white font-bold text-sm rounded-full">
         Sign Up
       </button>
 
