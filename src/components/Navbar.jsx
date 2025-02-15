@@ -32,7 +32,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="flex justify-between h-[80px] mt-5 mx-5 rounded-full shadow-lg items-center px-10 py-5 bg-[#6828B0]">
+    <nav className="flex justify-between h-[80px] md:h-[80px] sm:h-[65px] mt-5 mx-5 rounded-full shadow-lg items-center px-10 py-5 bg-[#6828B0]">
      
       <img src={logo} alt="Logo" className="h-12" />
 

@@ -7,9 +7,9 @@ const GetInTouchSection = () => {
       <div className="text-center mb-7">
         <p className="text-2xl md:text-5xl text-ink  sm:text-3xl font-bold">
           Get in touch with the best{" "}
-          <span className="text-[#6828B0]">Artisans</span>
+          <span className="text-[#6828B0]">Artisans </span>that
           <br />
-          that offer{" "}
+           offer{" "}
           <span className="text-[#6828B0]">Quality</span> services
         </p>
       </div>

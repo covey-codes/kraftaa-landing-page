@@ -14,8 +14,8 @@ const HeroSection = () => {
       
       <Navbar />
 
-      <div className=" flex mt-[100px] justify-center items-center">
-      <svg className="mt-0" width="950" height="700" viewBox="0 0 812 812" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div className=" flex mt-[100px] sm:mt-[40px] justify-center items-center">
+      <svg className="mt-0" width="800" height="700" viewBox="0 0 812 812" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="406" cy="406" r="405" stroke="#6828B0" stroke-width="2" stroke-dasharray="20 20"/>
 
       <HeroText />
