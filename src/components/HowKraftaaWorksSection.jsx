@@ -47,10 +47,10 @@ const HowKraftaaWorksSection = () => {
 
       {/* MOBILE VIEW (Visible only on small and medium screens) */}
       <div className="flex justify-center">
-        <div className="bg-gradient-to-b from-[#8407BA] to-[#6828B0] lg:hidden flex flex-col items-center text-center w-[80%] py-10 px-5 border-4 border-[#8407BA] rounded-2xl">
+        <div className=" bg-[#B1FA63] lg:hidden flex flex-col items-center text-center w-[80%] py-10 px-5 border-4 border-[#B1FA63] rounded-2xl">
           {/* Header */}
-          <h2 className="text-3xl font-bold text-[white] mb-8">
-            How <span className="text-[#B1FA63]">Kraftaa</span> Works
+          <h2 className="text-3xl font-bold text-[#6828B0] mb-8">
+            How <span className="text-[#6828B0]">Kraftaa</span> Works
           </h2>
 
           {/* Carousel */}
@@ -58,7 +58,7 @@ const HowKraftaaWorksSection = () => {
             <img
               src={mobileImages[activeImage]}
               alt="Mobile Carousel"
-              className="w-[80%] h-auto rounded-lg transition-all duration-300"
+              className="w-[80%] h-auto rounded-lg transition-all duration-800"
             />
           </div>
 

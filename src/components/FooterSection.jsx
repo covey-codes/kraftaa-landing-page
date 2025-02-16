@@ -5,10 +5,10 @@ const FooterSection = () => {
   return (
     <>
       {/* MOBILE FOOTER (Visible on small and medium screens) */}
-      <div className="lg:hidden bg-gradient-to-b from-[#8407BA] to-[#6828B0] h-[200px] flex flex-col items-center justify-center">
+      <div className="lg:hidden bg-black h-[200px] flex flex-col items-center justify-center">
         <img className="w-[200px]" src={logo} alt="logo" />
-        <p className="text-white text-1xl">Your personal <span className='text-[#B1FA63]'>Connection</span> to Local <span className='text-[#B1FA63]'>Experts...</span></p>
-        <div className="flex justify-center items-start text-white">
+        <p className="text-[#B1FA63] text-1xl">Your personal <span className='text-[#B1FA63]'>Connection</span> to Local <span className='text-[#B1FA63]'>Experts...</span></p>
+        <div className="flex text-sm justify-center items-start text-white">
           <ul className="m-5">Blog</ul>
           <ul className="m-5">About Us</ul>
           <ul className="m-5">Contact Us</ul>

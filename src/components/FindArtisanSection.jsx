@@ -51,7 +51,7 @@ const FindArtisanSection = () => {
 
       {/* Mobile View */}
       <div
-        className="relative lg:hidden bg-cover bg-center h-auto py-20 px-5"
+        className="relative lg:hidden flex justify-center flex-col bg-cover bg-center h-auto py-20 px-5"
         style={{
           backgroundImage: `url(${bgImage})`,
         }}
@@ -61,12 +61,12 @@ const FindArtisanSection = () => {
             Find Artisan by <span className="text-[#6828B0]">Location</span>
           </p>
 
-          <p className="text-lg">
+          <p className="text-2xl">
             You can easily find skilled artisans 
-            based on your <br />location. Whether
-            you're at home or at work, simply <br />
-            search for the services you and
-            connect with <br />trusted professionals
+            based on your location. <br /> Whether
+            you're at home or at work, simply 
+            search for the services <br /> you and
+            connect with trusted professionals
             nearby.
           </p>
 
@@ -74,8 +74,8 @@ const FindArtisanSection = () => {
         </div>
 
         {/* Empty div for mobile image */}
-        <div className="mt-10 w-[400px] ml-[120px] flex justify-center items-center">
-          <img src={location} alt="" />
+        <div className="mt-10 w-[700px]  flex justify-center ">
+          <img src={available} alt="" />
         </div>
       </div>
     </>
