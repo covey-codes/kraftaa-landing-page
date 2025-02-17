@@ -14,11 +14,11 @@ const GetInTouchSection = () => {
         </p>
       </div>
       
-      <div className="mx-auto w-full sm:w-[105%] md:w-[85%] lg:w-[90%] xl:w-[(90%] max-h-[1300px]">
+      <div className="mx-auto sm:w-[105%] md:w-[85%] lg:w-[90%] ">
   <img
     src={dashboard}
     alt="Dashboard"
-    className="mx-auto w-full max-h-[1200px] object-contain"
+    className="mx-auto w-full max-h-[800px] object-contain"
   />
 </div>
 
