@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'], // Change 'Poppins' to your preferred font
+        sans: ["Sora", "sans-serif"], // Set 'Sora' as default sans-serif font
       },
     },
   },

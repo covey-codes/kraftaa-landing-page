@@ -12,7 +12,7 @@ const DownloadmobileSection = () => {
   return (
     <div>
       {/* MOBILE VIEW (Visible on small and medium screens) */}
-      <div className="flex flex-col items-center lg:hidden">
+      <div className="flex flex-col items-center overflow-hidden lg:hidden">
         <div className="w-[300px]">
           <img src={kraftaa} alt="" />
         </div>

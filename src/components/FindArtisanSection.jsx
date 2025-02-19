@@ -29,7 +29,7 @@ const FindArtisanSection = () => {
 
             <div className=" text-center">
               <p className="text-4xl lg:text-6xl font-bold m-10 mb-20">
-                Find Artisan by <span className="text-[#6828B0]">Location</span>
+                Find Artisan by <span className="text-[#6828B0]">location</span>
               </p>
 
               <p className="text-2xl mb-10 lg:text-3xl">
@@ -50,21 +50,21 @@ const FindArtisanSection = () => {
 
       {/* Mobile View */}
       <div
-        className="relative lg:hidden flex justify-center flex-col bg-cover bg-center h-auto py-20 px-5"
+        className="relative lg:hidden flex justify-center flex-col bg-cover overflow-hidden bg-center h-auto py-20 px-5"
         style={{
           backgroundImage: `url(${bgImage})`,
         }}
       >
         <div className="text-center">
           <p className="text-3xl font-bold m-5">
-            Find Artisan by <span className="text-[#6828B0]">Location</span>
+            Find Artisan by <span className="text-[#6828B0]">location</span>
           </p>
 
-          <p className="text-2xl">
+          <p className="text-xl">
             You can easily find skilled artisans 
-            based on your location. <br /> Whether
-            you're at home or at work, simply 
-            search for the services <br /> you and
+            based on<br /> your location.  Whether
+            you're at home or at <br /> work, simply 
+            search for the services you need <br /> and
             connect with trusted professionals
             nearby.
           </p>

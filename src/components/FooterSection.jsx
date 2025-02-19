@@ -5,7 +5,7 @@ const FooterSection = () => {
   return (
     <>
       {/* MOBILE FOOTER (Visible on small and medium screens) */}
-      <div className="lg:hidden bg-black h-[200px] flex flex-col items-center justify-center">
+      <div className="lg:hidden bg-black h-[200px] flex flex-col overflow-hidden items-center justify-center">
         <img className="w-[200px]" src={logo} alt="logo" />
         <p className="text-[#B1FA63] text-1xl">Your personal <span className='text-[#B1FA63]'>Connection</span> to Local <span className='text-[#B1FA63]'>Experts...</span></p>
         <div className="flex text-sm justify-center items-start text-white">

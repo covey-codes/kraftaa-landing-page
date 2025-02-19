@@ -5,8 +5,8 @@ const AnyServicesSection = () => {
   return (
     <>
       {/* Mobile Version (Only visible on small screens) */}
-      <div className="bg-white h-[300px]"></div>
-      <div className="bg-[rgb(29,26,58)] bg-opacity-100 ">
+      <div className="bg-white h-[300px] overflow-hidden"></div>
+      <div className="bg-[rgb(29,26,58)] bg-opacity-100 overflow-x-clip">
       <div className="block md:hidden relative ml-[60px] top-[-150px] bg-[#B1FA63] border-2 border-[#1EAC23] rounded-3xl w-[85%]  shadow-lg py-10 px-6">
         <div className="mt-5 ">
           <p className="text-3xl font-bold text-[#1D1A3A]">
@@ -32,7 +32,7 @@ const AnyServicesSection = () => {
      
       
       {/* Desktop Version (Only visible on larger screens) */}
-      <div className="hidden md:block bg-[#060624] h-[1500px]">
+      <div className="hidden overflow-hidden md:block bg-[#060624] h-[1500px]">
         <div className="h-[20%] bg-white"></div>
         <div className="h-[60%] bg-[#1D1A3A] relative">
           <div className="absolute top-[-20%] left-1/2 transform -translate-x-1/2 bg-[#B1FA63] border-2 border-[#1EAC23] w-[90%] h-[100%] rounded-3xl shadow-lg grid grid-cols-2 grid-rows-2 p-[30px]">

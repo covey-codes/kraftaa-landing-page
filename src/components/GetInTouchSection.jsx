@@ -2,7 +2,7 @@ import dashboard from "../assets/Images/dashboard pic.jpg";
 
 const GetInTouchSection = () => {
   return (
-    <div className="px-6 py-12">
+    <div className="px-6 py-12 overflow-hidden">
       
       <div className="text-center mb-7">
         <p className="text-2xl md:text-5xl text-ink  sm:text-3xl font-bold">
