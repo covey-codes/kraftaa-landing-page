@@ -8,7 +8,7 @@ const FindArtisanSection = () => {
     <>
       {/* Desktop View */}
       <div
-        className="relative hidden lg:block bg-cover bg-center h-[800px] mb-[20px] mt-[-370px] w-full"
+        className="relative hidden lg:block bg-cover bg-center h-[900px] mb-[20px] mt-[-370px] w-full"
         style={{
           backgroundImage: `url(${bgImage})`,
         }}
@@ -18,30 +18,29 @@ const FindArtisanSection = () => {
             <div className="relative flex">
               {/* First Image */}
               <div className="w-[700px]">
-                <img src={available} alt="img" />
+                <img className="w-[900px]" src={available} alt="img" />
               </div>
 
               {/* Second Image Positioned at Top-Right of First Image */}
-              <div className="w-[250px] absolute top-[-75px] right-[70px]">
+              <div className="w-[250px] absolute top-[-85px] right-[-80px]">
                 <img src={booked} alt="checkmark" />
               </div>
             </div>
 
             <div className=" text-center">
-              <p className="text-4xl lg:text-6xl font-bold m-10">
+              <p className="text-4xl lg:text-6xl font-bold m-10 mb-20">
                 Find Artisan by <span className="text-[#6828B0]">Location</span>
               </p>
 
-              <p className="text-2xl lg:text-3xl">
-                You can easily find skilled artisans <br />
-                based on your location. Whether <br />
-                you're at home or at work, simply <br />
-                search for the services you and <br />
-                connect with trusted professionals <br />
-                nearby.
+              <p className="text-2xl mb-10 lg:text-3xl">
+                You can easily find skilled artisans
+                based on <br />your location. Whether
+                you're at home or at  <br />work, simply
+                search for the services you need  <br />and
+                connect with trusted professionals nearby.
               </p>
 
-              <button className="m-[60px] text-2xl text-white bg-[#6828B0] p-[20px] rounded-full w-[500px]">
+              <button className="m-[70px] text-2xl text-white bg-[#6828B0] p-[20px] rounded-full w-[700px]">
                 Find nearby artisan
               </button>
             </div>
@@ -74,8 +73,11 @@ const FindArtisanSection = () => {
         </div>
 
         {/* Empty div for mobile image */}
-        <div className="mt-10 w-[700px]  flex justify-center ">
+        <div className="mt-20 w-[700px]  flex justify-center ">
           <img src={available} alt="" />
+        </div>
+        <div className="w-[250px] top-[-600px] left-[450px] relative">
+          <img src={booked} alt="" />
         </div>
       </div>
     </>
