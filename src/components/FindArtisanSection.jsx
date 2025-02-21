@@ -1,7 +1,6 @@
 import bgImage from "../assets/images/Pattern.jpg";
 import available from "../assets/Images/available.png";
 import booked from "../assets/Images/Booked.png";
-import location from "../assets/Images/location.png"
 
 const FindArtisanSection = () => {
   return (
@@ -21,23 +20,22 @@ const FindArtisanSection = () => {
                 <img className="w-[900px]" src={available} alt="img" />
               </div>
 
-              {/* Second Image Positioned at Top-Right of First Image */}
-              <div className="w-[250px] absolute top-[-85px] right-[-80px]">
+              {/* Animated Booked Image */}
+              <div className="w-[250px] absolute top-[-85px] right-[-80px] animate-floating">
                 <img src={booked} alt="checkmark" />
               </div>
             </div>
 
-            <div className=" text-center">
+            <div className="text-center">
               <p className="text-4xl lg:text-6xl font-bold m-10 mb-20">
                 Find Artisan by <span className="text-[#6828B0]">location</span>
               </p>
 
               <p className="text-2xl mb-10 lg:text-3xl">
-                You can easily find skilled artisans
-                based on <br />your location. Whether
-                you're at home or at  <br />work, simply
-                search for the services you need  <br />and
-                connect with trusted professionals nearby.
+                You can easily find skilled artisans based on <br />
+                your location. Whether you're at home or at <br />
+                work, simply search for the services you need <br />
+                and connect with trusted professionals nearby.
               </p>
 
               <button className="m-[70px] text-2xl text-white bg-[#6828B0] p-[20px] rounded-full w-[700px]">
@@ -61,25 +59,38 @@ const FindArtisanSection = () => {
           </p>
 
           <p className="text-xl">
-            You can easily find skilled artisans 
-            based on<br /> your location.  Whether
-            you're at home or at <br /> work, simply 
-            search for the services you need <br /> and
-            connect with trusted professionals
+            You can easily find skilled artisans based on<br /> your location.
+            Whether you're at home or at <br /> work, simply search for the
+            services you need <br /> and connect with trusted professionals
             nearby.
           </p>
-
-          
         </div>
 
-        {/* Empty div for mobile image */}
-        <div className="mt-20 w-[700px]  flex justify-center ">
+        {/* Mobile Image */}
+        <div className="mt-20 w-[700px] flex justify-center">
           <img src={available} alt="" />
         </div>
-        <div className="w-[250px] top-[-600px] left-[450px] relative">
+
+        {/* Animated Booked Image for Mobile */}
+        <div className="w-[230px] top-[-590px] left-[450px] relative animate-floating">
           <img src={booked} alt="" />
         </div>
       </div>
+
+      {/* Add Tailwind Keyframes in styles */}
+      <style>
+        {`
+          @keyframes floating {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(-5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+          }
+          
+          .animate-floating {
+            animation: floating 3s ease-in-out infinite;
+          }
+        `}
+      </style>
     </>
   );
 };
