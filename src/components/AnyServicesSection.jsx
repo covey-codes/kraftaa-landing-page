@@ -12,7 +12,7 @@ const AnyServicesSection = () => {
           <p className="text-3xl font-bold text-[#1D1A3A]">
             Any <span className="text-[#6828B0]">service</span> you need all in one <span className="text-[#6828B0]">place</span>
           </p>
-          <div className="w-[700px] mt-5">
+          <div className="w-[700px] mt-5 p-5">
             <img src={categg} alt="Services" className="w-[80%]" />
           </div>
           <p className="mt-6 text-xl text-[#1D1A3A]">
