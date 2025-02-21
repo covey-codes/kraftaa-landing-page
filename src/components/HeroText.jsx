@@ -25,7 +25,7 @@ const HeroText = () => {
   {/* Button Wrapper with White Space */}
   <div className="relative flex justify-center items-center w-[265px] h-[60px] bg-white rounded-full">
     {/* Button (Expands on Hover) */}
-    <button className="bg-gradient-to-r from-[#8407BA] to-[#6828B0] text-white cursor-pointer rounded-full w-[50px] h-[50px] transition-all duration-300 hover:w-[320px] hover:h-[80px]">
+    <button className="bg-gradient-to-r  from-[#8407BA] to-[#6828B0] text-white cursor-pointer rounded-full w-[250px] h-[50px] transition-all duration-300 hover:w-[300px] hover:h-[80px]">
       Get Started
     </button>
   </div>
