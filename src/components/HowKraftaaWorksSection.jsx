@@ -1,51 +1,58 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import forartisan from "../assets/Images/forartisan.png";
 import forclient from "../assets/Images/forclient.png";
 import svg from "../assets/pattern.svg";
 
 const HowKraftaaWorksSection = () => {
   const [currentTab, setCurrentTab] = useState("client");
-  const startX = useRef(0);
-  const deltaX = useRef(0);
-  const isDragging = useRef(false);
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-  // Detect small & medium screens
-  const isSmallOrMediumScreen = () => window.matchMedia("(max-width: 768px)").matches;
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 } // Triggers when 20% of the section is visible
+    );
 
-  // Start touch event
-  const handleTouchStart = (e) => {
-    if (!isSmallOrMediumScreen()) return;
-    isDragging.current = true;
-    startX.current = e.touches[0].clientX;
-    deltaX.current = 0;
-  };
-
-  // Track movement
-  const handleTouchMove = (e) => {
-    if (!isDragging.current || !isSmallOrMediumScreen()) return;
-    deltaX.current = startX.current - e.touches[0].clientX;
-  };
-
-  // End touch event (detects swipe direction)
-  const handleTouchEnd = () => {
-    if (!isDragging.current || !isSmallOrMediumScreen()) return;
-    isDragging.current = false;
-
-    if (deltaX.current > 50) {
-      setCurrentTab("artisan");
-    } else if (deltaX.current < -50) {
-      setCurrentTab("client");
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
-  };
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <div>
+    <div ref={sectionRef} className="overflow-hidden">
       {/* Desktop View */}
-      <div className="relative hidden lg:flex justify-center mt-[200px] overflow-hidden">
-        <img src={svg} alt="Background Left" className="absolute top-[300px] left-0 h-full w-auto transform -translate-x-1/4" />
-        <img src={svg} alt="Background Right" className="absolute top-[400px] right-0 h-full w-auto transform translate-x-1/4" />
+      <div className="relative hidden lg:flex justify-center mt-[200px]">
+        <img
+          src={svg}
+          alt="Background Left"
+          className={`absolute top-[300px] left-0 h-full w-auto transform -translate-x-1/4 transition-all duration-1000 ${
+            isVisible ? "translate-x-0 opacity-100" : "opacity-0"
+          }`}
+        />
+        <img
+          src={svg}
+          alt="Background Right"
+          className={`absolute top-[400px] right-0 h-full w-auto transform translate-x-1/4 transition-all duration-1000 ${
+            isVisible ? "translate-x-0 opacity-100" : "opacity-0"
+          }`}
+        />
 
-        <div className="bg-[#B1FA63] relative w-[70%] border-4 border-[#1EAC23] rounded-2xl py-16 h-[800px] text-center">
+        <div
+          className={`bg-[#B1FA63] relative w-[70%] border-4 border-[#1EAC23] rounded-2xl py-16 h-[800px] text-center transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <h2 className="text-5xl font-bold mb-[100px] text-[#1D1A3A]">How Kraftaa Works</h2>
           <div className="flex justify-center mb-[100px] gap-10">
             <img src={forclient} alt="Step 1" className="w-[500px] h-auto rounded-lg" />
@@ -55,23 +62,21 @@ const HowKraftaaWorksSection = () => {
         </div>
       </div>
 
-      {/* Mobile View (Swipe-enabled carousel) */}
+      {/* Mobile View */}
       <div className="flex justify-center">
         <div
-          className="bg-[#B1FA63] lg:hidden h-[550px] flex flex-col items-center text-center w-[90%] py-10 px-5 border-4 border-[#B1FA63] rounded-2xl overflow-hidden"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
+          className={`bg-[#B1FA63] lg:hidden h-[550px] flex flex-col items-center text-center w-[90%] py-10 px-5 border-4 border-[#B1FA63] rounded-2xl transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
         >
           <h2 className="text-3xl font-bold text-[#1D1A3A] mb-8">How Kraftaa Works</h2>
 
-          {/* Swipeable Container */}
+          {/* Content */}
           <div className="relative w-full overflow-hidden">
             <div
               className="flex w-[200%] transition-transform duration-500 ease-in-out"
               style={{ transform: currentTab === "client" ? "translateX(0)" : "translateX(-50%)" }}
             >
-              {/* Client Content */}
               <div className="w-[50%] flex-shrink-0 rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-3">
                 <div className="bg-white text-[#1D1A3A] font-bold w-[95%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-40px] mb-[30px]">
                   <p>For Client</p>
@@ -83,7 +88,6 @@ const HowKraftaaWorksSection = () => {
                 </ul>
               </div>
 
-              {/* Artisan Content */}
               <div className="w-[50%] flex-shrink-0 rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-3">
                 <div className="bg-white text-[#1D1A3A] font-bold w-[95%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-40px] mb-[30px]">
                   <p>For Artisan</p>
@@ -113,10 +117,7 @@ const HowKraftaaWorksSection = () => {
             />
           </div>
 
-          {/* Get Started Button */}
-          <button className="text-white bg-[#1D1A3A] w-[80%] max-w-[300px] h-[50px] font-bold rounded-full mt-6">
-            Get Started
-          </button>
+          <button className="text-white bg-[#1D1A3A] w-[80%] max-w-[300px] h-[50px] font-bold rounded-full mt-6">Get Started</button>
         </div>
       </div>
     </div>

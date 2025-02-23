@@ -1,26 +1,55 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import dashboard from "../assets/Images/dashboard pic.jpg";
 
 const GetInTouchSection = () => {
+  const ref = useRef(null); // Reference for tracking visibility
+  const isInView = useInView(ref, { once: true, margin: "-100px" }); // Trigger when visible
+
+  // Animation variants for sliding in from the right
+  const slideInVariant = {
+    hidden: { x: 100, opacity: 0 },
+    visible: (i) => ({
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.8, delay: i * 0.3, ease: "easeOut" },
+    }),
+  };
+
   return (
-    <div className="px-6 py-12 overflow-hidden">
+    <div ref={ref} className="px-6 py-12 overflow-hidden">
       
-      <div className="text-center mb-7">
-        <p className="text-2xl md:text-5xl text-ink  sm:text-3xl font-bold">
+      {/* Animated Text */}
+      <motion.div
+        variants={slideInVariant}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"} // Animate when in view
+        custom={0}
+        className="text-center mb-7"
+      >
+        <p className="text-2xl md:text-5xl text-ink sm:text-3xl font-bold">
           Get in touch with the best{" "}
           <span className="text-[#6828B0]">Artisans </span>that
           <br />
-           offer{" "}
+          offer{" "}
           <span className="text-[#6828B0]">Quality</span> services
         </p>
-      </div>
-      
-      <div className="mx-auto sm:w-[105%] md:w-[85%] lg:w-[90%] ">
-  <img
-    src={dashboard}
-    alt="Dashboard"
-    className="mx-auto w-full max-h-[800px] object-contain"
-  />
-</div>
+      </motion.div>
+
+      {/* Animated Image */}
+      <motion.div
+        variants={slideInVariant}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"} // Animate when in view
+        custom={1}
+        className="mx-auto sm:w-[105%] md:w-[85%] lg:w-[90%]"
+      >
+        <img
+          src={dashboard}
+          alt="Dashboard"
+          className="mx-auto w-full max-h-[800px] object-contain"
+        />
+      </motion.div>
 
     </div>
   );

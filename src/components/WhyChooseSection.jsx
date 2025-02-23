@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import img1 from '../assets/Images/carousel 1.png';
-import img2 from '../assets/Images/carousel 2.png';
-import img3 from '../assets/Images/carousel 3.png';
+import React, { useState } from "react";
+import { motion } from "framer-motion"; 
+import img1 from "../assets/Images/carousel 1.png";
+import img2 from "../assets/Images/carousel 2.png";
+import img3 from "../assets/Images/carousel 3.png";
 
 const images = [img1, img2, img3];
 
@@ -21,14 +22,26 @@ const WhyChoose = () => {
   return (
     <div className="px-6 py-12 overflow-hidden">
       {/* Header Text */}
-      <div className="text-center mb-7">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }} // Ensures animation happens only once
+        className="text-center mb-7"
+      >
         <p className="sm:text-4xl mb-[100px] font-bold">
           Why choose <span className="text-[#6828B0]">Kraftaa</span>
         </p>
-      </div>
+      </motion.div>
 
       {/* Carousel Container */}
-      <div className="m-[-30px] overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="m-[-30px]"
+      >
         <div className="relative flex justify-center max-w-[1000px] mx-auto">
           <div
             className="flex transition-transform duration-500"
@@ -47,27 +60,34 @@ const WhyChoose = () => {
           </div>
 
           {/* Navigation Buttons */}
-          <button
+          <motion.button
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true }}
             onClick={prevSlide}
-            className="absolute sm:top-[500px] sm:left-[530px] top-1/2 lg:left-[80px] transform -translate-y-1/2 bg-[#B1FA63] bg-opacity-70 text-white px-4 py-2 rounded-full flex items-center justify-center w-12 h-12"
+            className="absolute sm:top-[470px] sm:left-[530px] top-1/2 lg:left-[80px] transform -translate-y-1/2 bg-[#B1FA63] bg-opacity-70 text-white px-4 py-2 rounded-full flex items-center justify-center w-12 h-12"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="white" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
-          </button>
+          </motion.button>
           
-          <button
+          <motion.button
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
             onClick={nextSlide}
-            className="absolute sm:top-[500px] sm:right-[70px] top-1/2 right-11 transform -translate-y-1/2 bg-[#6828B0] bg-opacity-70 text-white px-4 py-2 rounded-full flex items-center justify-center w-12 h-12"
+            className="absolute sm:top-[470px] sm:right-[70px] top-1/2 right-11 transform -translate-y-1/2 bg-[#6828B0] bg-opacity-70 text-white px-4 py-2 rounded-full flex items-center justify-center w-12 h-12"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="white" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
-          </button>
+          </motion.button>
 
         </div>
-      </div>
-      
+      </motion.div>
     </div>
   );
 };

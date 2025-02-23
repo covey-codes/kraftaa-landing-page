@@ -1,89 +1,75 @@
-import kraftaa from '../assets/Images/kraftaalogo.png';
-import mobile from '../assets/Images/mobile.png';
-import facebook from '../assets/facebook.svg';
-import instagram from '../assets/instagram.svg';
-import tiktok from '../assets/tiktok.svg';
-import linkedin from '../assets/linkedin.svg';
-import twitter from '../assets/twitter.svg';
-import googleplay from '../assets/Images/googleplay.png';
-import applestore from '../assets/Images/applestore.png';
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import kraftaa from "../assets/Images/kraftaalogo.png";
+import mobile from "../assets/Images/mobile.png";
+import facebook from "../assets/facebook.svg";
+import instagram from "../assets/instagram.svg";
+import tiktok from "../assets/tiktok.svg";
+import linkedin from "../assets/linkedin.svg";
+import twitter from "../assets/twitter.svg";
+import googleplay from "../assets/Images/googleplay.png";
+import applestore from "../assets/Images/applestore.png";
 
 const DownloadmobileSection = () => {
-  return (
-    <div>
-      {/* MOBILE VIEW (Visible on small and medium screens) */}
-      <div className="flex flex-col items-center overflow-hidden lg:hidden">
-        <div className="w-[300px]">
-          <img src={kraftaa} alt="" />
-        </div>
-        <div>
-          <p className="text-black font-normal md:text-2xl md:font-medium sm:text-xl">Download Kraftaa mobile app for easy tracking...</p>
-        </div>
-        <div className="mt-[40px] flex justify-center w-full">
-          <div className="w-[300px] hidden">
-            <img src={mobile} alt="" />
-          </div>
+  const ref = useRef(null);
+  const inView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
 
-          <div className="w-[280px] items-center flex flex-col justify-center">
-            <img className="m-55" src={googleplay} alt="" />
-            <img className="m-10" src={applestore} alt="" />
+  return (
+    <div ref={ref}>
+      {/* MOBILE VIEW */}
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={inView ? { y: 0, opacity: 1 } : {}}
+        transition={{ type: "spring", stiffness: 60, damping: 12 }}
+        className="flex flex-col items-center overflow-hidden lg:hidden"
+      >
+        <div className="w-[300px]">
+          <img src={kraftaa} alt="Kraftaa Logo" />
+        </div>
+        <p className="text-black font-normal md:text-2xl md:font-medium sm:text-xl">
+          Download Kraftaa mobile app for easy tracking...
+        </p>
+        <div className="mt-[40px] flex justify-center w-full">
+          <div className="w-[280px] flex flex-col items-center">
+            <img className="m-5" src={googleplay} alt="Google Play" />
+            <img className="m-5" src={applestore} alt="Apple Store" />
           </div>
         </div>
         <div className="flex justify-between m-[40px] w-[200px]">
-          <div>
-            <img src={facebook} alt="logo" />
-          </div>
-          <div>
-            <img src={instagram} alt="logo" />
-          </div>
-          <div>
-            <img src={tiktok} alt="logo" />
-          </div>
-          <div>
-            <img src={linkedin} alt="logo" />
-          </div>
-          <div>
-            <img src={twitter} alt="logo" />
-          </div>
+          {[facebook, instagram, tiktok, linkedin, twitter].map((icon, index) => (
+            <img key={index} src={icon} alt="Social Media" />
+          ))}
         </div>
-      </div>
+      </motion.div>
 
-      {/* DESKTOP VIEW (Visible on large screens and above) */}
-      <div className="hidden lg:flex flex-col items-center">
+      {/* DESKTOP VIEW */}
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={inView ? { y: 0, opacity: 1 } : {}}
+        transition={{ type: "spring", stiffness: 60, damping: 12 }}
+        className="hidden lg:flex flex-col items-center"
+      >
         <div className="w-[300px]">
-          <img src={kraftaa} alt="" />
+          <img src={kraftaa} alt="Kraftaa Logo" />
         </div>
-        <div>
-          <p className="text-black text-3xl">Download Kraftaa mobile app for easy tracking...</p>
-        </div>
+        <p className="text-black text-3xl">
+          Download Kraftaa mobile app for easy tracking...
+        </p>
         <div className="mt-[60px] flex w-full items-center justify-center gap-10">
           <div className="w-[350px]">
-            <img src={mobile} alt="" />
+            <img src={mobile} alt="Mobile Preview" />
           </div>
-
           <div className="flex flex-col items-center">
-            <img className="mb-6 w-[500px]" src={googleplay} alt="" />
-            <img className="w-[500px]" src={applestore} alt="" />
+            <img className="mb-6 w-[500px]" src={googleplay} alt="Google Play" />
+            <img className="w-[500px]" src={applestore} alt="Apple Store" />
           </div>
         </div>
         <div className="flex justify-between mt-[50px] mb-10 w-[300px]">
-          <div>
-            <img src={facebook} alt="logo" />
-          </div>
-          <div>
-            <img src={instagram} alt="logo" />
-          </div>
-          <div>
-            <img src={tiktok} alt="logo" />
-          </div>
-          <div>
-            <img src={linkedin} alt="logo" />
-          </div>
-          <div>
-            <img src={twitter} alt="logo" />
-          </div>
+          {[facebook, instagram, tiktok, linkedin, twitter].map((icon, index) => (
+            <img key={index} src={icon} alt="Social Media" />
+          ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
