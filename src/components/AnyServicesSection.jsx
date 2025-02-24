@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import categg from "../assets/Images/Categg.png";
+import categg from "../assets/images/Categg.png";
 
 const slideInVariants = {
   hidden: { opacity: 0, x: -50 },

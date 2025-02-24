@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import forartisan from "../assets/Images/forartisan.png";
-import forclient from "../assets/Images/forclient.png";
+import forartisan from "../assets/images/forartisan.png";
+import forclient from "../assets/images/forclient.png";
 import svg from "../assets/pattern.svg";
 
 const HowKraftaaWorksSection = () => {

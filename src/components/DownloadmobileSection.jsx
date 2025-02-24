@@ -1,14 +1,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import kraftaa from "../assets/Images/kraftaalogo.png";
-import mobile from "../assets/Images/mobile.png";
+import kraftaa from "../assets/images/kraftaalogo.png";
+import mobile from "../assets/images/mobile.png";
 import facebook from "../assets/facebook.svg";
 import instagram from "../assets/instagram.svg";
 import tiktok from "../assets/tiktok.svg";
 import linkedin from "../assets/linkedin.svg";
 import twitter from "../assets/twitter.svg";
-import googleplay from "../assets/Images/googleplay.png";
-import applestore from "../assets/Images/applestore.png";
+import googleplay from "../assets/images/googleplay.png";
+import applestore from "../assets/images/applestore.png";
 
 const DownloadmobileSection = () => {
   const ref = useRef(null);

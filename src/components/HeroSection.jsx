@@ -1,9 +1,9 @@
 import { motion } from "framer-motion"; // Import Framer Motion
 import Navbar from "./Navbar";
 import bgImage from "../assets/images/Pattern.jpg";
-import second from "../assets/Images/second.png";
-import locationmark from "../assets/Images/locationmark.png";
-import logodesign from "../assets/Images/logodesign.png";
+import second from "../assets/images/second.png";
+import locationmark from "../assets/images/locationmark.png";
+import logodesign from "../assets/images/logodesign.png";
 import clipper from "../assets/clipper.svg";
 
 const HeroSection = () => {

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion"; 
-import img1 from "../assets/Images/carousel 1.png";
-import img2 from "../assets/Images/carousel 2.png";
-import img3 from "../assets/Images/carousel 3.png";
+import img1 from "../assets/images/carousel 1.png";
+import img2 from "../assets/images/carousel 2.png";
+import img3 from "../assets/images/carousel 3.png";
 import { headers } from "../Constants"; // Import headers
 
 const images = [img1, img2, img3];

@@ -1,8 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import bgImage from "../assets/images/Pattern.jpg";
-import available from "../assets/Images/available.png";
-import booked from "../assets/Images/Booked.png";
+import available from "../assets/images/available.png";
+import booked from "../assets/images/Booked.png";
 
 const FindArtisanSection = () => {
   const sectionRef = useRef(null);
