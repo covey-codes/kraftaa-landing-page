@@ -3,6 +3,7 @@ import { useRef } from "react";
 import bgImage from "../assets/images/Pattern.jpg";
 import available from "../assets/images/available.png";
 import booked from "../assets/images/Booked.png";
+import { headers } from "../Constants"; // Adjust the path as needed
 
 const FindArtisanSection = () => {
   const sectionRef = useRef(null);
@@ -44,7 +45,7 @@ const FindArtisanSection = () => {
 
             <div className="text-center">
               <p className="text-4xl lg:text-6xl font-bold m-10 mb-20">
-                Find Artisan by <span className="text-[#6828B0]">location</span>
+                {headers.find((header) => header.key === "findArtisan")?.title}
               </p>
 
               <p className="text-2xl mb-10 lg:text-3xl">
@@ -77,7 +78,7 @@ const FindArtisanSection = () => {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <p className="text-3xl font-bold m-5">
-            Find Artisan by <span className="text-[#6828B0]">location</span>
+            {headers.find((header) => header.key === "findArtisan")?.title}
           </p>
 
           <p className="text-xl">

@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { headers } from "../Constants";
 import forartisan from "../assets/images/forartisan.png";
 import forclient from "../assets/images/forclient.png";
 import svg from "../assets/pattern.svg";
@@ -15,7 +16,7 @@ const HowKraftaaWorksSection = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 } // Triggers when 20% of the section is visible
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -53,7 +54,9 @@ const HowKraftaaWorksSection = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-5xl font-bold mb-[100px] text-[#1D1A3A]">How Kraftaa Works</h2>
+          <h2 className="text-5xl font-bold mb-[100px] text-[#1D1A3A]">
+            {headers.find((h) => h.key === "howKraftaaWorks")?.title}
+          </h2>
           <div className="flex justify-center mb-[100px] gap-10">
             <img src={forclient} alt="Step 1" className="w-[500px] h-auto rounded-lg" />
             <img src={forartisan} alt="Step 2" className="w-[500px] h-auto rounded-lg" />
@@ -69,7 +72,9 @@ const HowKraftaaWorksSection = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl font-bold text-[#1D1A3A] mb-8">How Kraftaa Works</h2>
+          <h2 className="text-3xl font-bold text-[#1D1A3A] mb-8">
+            {headers.find((h) => h.key === "howKraftaaWorks")?.title}
+          </h2>
 
           {/* Content */}
           <div className="relative w-full overflow-hidden">

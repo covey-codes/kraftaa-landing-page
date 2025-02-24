@@ -17,7 +17,18 @@ export const headers = [
         </>
       ),
     },
-
+    {
+      key: "findArtisan",
+      title: (
+        <>
+          Find Artisan by <span className="text-[#6828B0]">Location</span>
+        </>
+      ),
+    },
+    {
+        key: "howKraftaaWorks",
+        title: "How Kraftaa Works",
+      },
   ];
   
   
