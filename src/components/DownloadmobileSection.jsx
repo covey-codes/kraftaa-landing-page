@@ -23,7 +23,7 @@ const DownloadmobileSection = () => {
         transition={{ type: "spring", stiffness: 60, damping: 12 }}
         className="flex flex-col items-center overflow-hidden lg:hidden"
       >
-        <div className="w-[300px]">
+        <div className="w-[200px]">
           <img src={kraftaa} alt="Kraftaa Logo" />
         </div>
         <p className="text-black font-normal md:text-2xl md:font-medium sm:text-xl">

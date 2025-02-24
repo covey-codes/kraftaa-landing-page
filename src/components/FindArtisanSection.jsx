@@ -81,9 +81,9 @@ const FindArtisanSection = () => {
           </p>
 
           <p className="text-xl">
-            You can easily find skilled artisans based on<br /> your location.
-            Whether you're at home or at <br /> work, simply search for the
-            services you need <br /> and connect with trusted professionals
+            You can easily find skilled artisans based on your location. <br />
+            Whether you're at home or at work, simply search for the
+            services you need and connect with trusted professionals
             nearby.
           </p>
         </motion.div>

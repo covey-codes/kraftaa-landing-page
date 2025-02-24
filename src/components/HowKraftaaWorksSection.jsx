@@ -117,7 +117,7 @@ const HowKraftaaWorksSection = () => {
             />
           </div>
 
-          <button className="text-white bg-[#1D1A3A] w-[80%] max-w-[300px] h-[50px] font-bold rounded-full mt-6">Get Started</button>
+          <button className="text-white bg-[#1D1A3A] w-[200px] max-w-[300px] h-[50px] font-bold rounded-full mt-6">Get Started</button>
         </div>
       </div>
     </div>
