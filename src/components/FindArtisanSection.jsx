@@ -105,7 +105,7 @@ const FindArtisanSection = () => {
           animate={isInView ? { opacity: 1, rotate: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <img src={booked} alt="" />
+          <img src={booked} alt="booked" />
         </motion.div>
       </div>
     </>
