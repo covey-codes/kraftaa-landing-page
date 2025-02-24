@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import img1 from "../assets/Images/carousel 1.png";
 import img2 from "../assets/Images/carousel 2.png";
 import img3 from "../assets/Images/carousel 3.png";
+import { headers } from "../Constants"; // Import headers
 
 const images = [img1, img2, img3];
 
@@ -22,17 +23,20 @@ const WhyChoose = () => {
   return (
     <div className="px-6 py-12 overflow-hidden">
       {/* Header Text */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }} // Ensures animation happens only once
-        className="text-center mb-7"
-      >
-        <p className="sm:text-4xl mb-[100px] font-bold">
-          Why choose <span className="text-[#6828B0]">Kraftaa</span>
-        </p>
-      </motion.div>
+      {headers.map((header) =>
+        header.key === "whyChoose" ? (
+          <motion.div
+            key={header.key}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="text-center mb-7"
+          >
+            <p className="sm:text-4xl mb-[100px] font-bold">{header.title}</p>
+          </motion.div>
+        ) : null
+      )}
 
       {/* Carousel Container */}
       <motion.div

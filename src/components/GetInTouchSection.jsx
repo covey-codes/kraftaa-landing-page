@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import dashboard from "../assets/Images/dashboard pic.jpg";
+import { headers } from "../Constants"; // Import headers
 
 const GetInTouchSection = () => {
   const ref = useRef(null); // Reference for tracking visibility
@@ -16,6 +17,9 @@ const GetInTouchSection = () => {
     }),
   };
 
+  // Find the correct header by key
+  const headerText = headers.find((header) => header.key === "getInTouch")?.title;
+
   return (
     <div ref={ref} className="px-6 py-12 overflow-hidden">
       
@@ -28,11 +32,7 @@ const GetInTouchSection = () => {
         className="text-center mb-7"
       >
         <p className="text-2xl md:text-5xl text-ink sm:text-3xl font-bold">
-          Get in touch with the best{" "}
-          <span className="text-[#6828B0]">Artisans </span>that
-          <br />
-          offer{" "}
-          <span className="text-[#6828B0]">Quality</span> services
+          {headerText} {/* Use imported header */}
         </p>
       </motion.div>
 
