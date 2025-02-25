@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"; // Import Framer Motion
 import Navbar from "./Navbar";
-import bgImage from "../assets/images/Pattern.jpg";
+
 import second from "../assets/images/second.png";
 import locationmark from "../assets/images/locationmark.png";
 import logodesign from "../assets/images/logodesign.png";
@@ -19,9 +19,10 @@ const HeroSection = () => {
 
   return (
     <div
-      className="relative bg-cover bg-center sm:h-[800px] lg:h-[950px] overflow-hidden w-full"
-      style={{ backgroundImage: `url(${bgImage})` }}
-    >
+   className="relative bg-cover bg-center sm:h-[800px] lg:h-[950px] overflow-hidden w-full"
+   style={{ backgroundImage: `url("/Pattern.jpg")` }}
+ >
+
       <Navbar />
 
       {/* Image Container */}
