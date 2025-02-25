@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import dashboard from "../assets/images/dashboard pic.jpg";
+import dashboard from "../assets/images/dashboardpic.jpg";
 import { headers } from "../Constants"; // Import headers
 
 const GetInTouchSection = () => {
