@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import categg from "../assets/images/Categg.png";
+
 
 const slideInVariants = {
   hidden: { opacity: 0, x: -50 },
@@ -21,7 +21,7 @@ const AnyServicesSection = () => {
             </p>
             <div className="w-[700px] mt-5 p-5">
               <motion.img
-                src={categg}
+                src="/Categg.png"
                 alt="Services"
                 className="w-[80%]"
                 variants={slideInVariants}
@@ -92,7 +92,7 @@ const AnyServicesSection = () => {
               </p>
             </motion.div>
             <motion.div initial="hidden" animate="visible" variants={slideInVariants} className="-mt-20 flex justify-center">
-              <img src={categg} alt="Services" className="w-[70%]" />
+              <img src="/Categg.png" alt="Services" className="w-[70%]" />
             </motion.div>
             <motion.div initial="hidden" animate="visible" variants={slideInVariants} className="-mt-[35px]">
               <input

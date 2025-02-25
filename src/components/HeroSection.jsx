@@ -1,11 +1,6 @@
 import { motion } from "framer-motion"; // Import Framer Motion
 import Navbar from "./Navbar";
 
-import second from "../assets/images/second.png";
-import locationmark from "../assets/images/locationmark.png";
-import logodesign from "../assets/images/logodesign.png";
-import clipper from "../assets/clipper.svg";
-
 const HeroSection = () => {
   // Animation variants for sliding in from the right
   const slideInVariant = {
@@ -27,7 +22,7 @@ const HeroSection = () => {
 
       {/* Image Container */}
       <div className="relative flex justify-center mt-[100px] sm:mt-[40px]">
-        <img src={second} alt="Second Image" className="lg:w-[800px] sm:w-[600px]" />
+        <img src="/second.png" alt="Second Image" className="lg:w-[800px] sm:w-[600px]" />
 
         {/* Overlayed Content */}
         <div className="absolute top-[20%] left-[10%] w-[80%] flex flex-col justify-center items-center gap-4">
@@ -42,7 +37,7 @@ const HeroSection = () => {
           >
             {/* Find Artisan Section */}
             <div className="flex flex-row items-center pl-5 pr-[50px] gap-1">
-              <img src={locationmark} alt="Location" className="w-[30px] h-[30px]" />
+              <img src="/locationmark.png" alt="Location" className="w-[30px] h-[30px]" />
               <p className="text-lg">Find Artisan</p>
             </div>
 
@@ -51,7 +46,7 @@ const HeroSection = () => {
 
             {/* Category Section */}
             <div className="flex flex-row pl-[30px] items-center gap-1">
-              <img src={clipper} alt="Category Icon" className="w-[24px] h-[24px]" />
+              <img src="/clipper.svg" alt="Category Icon" className="w-[24px] h-[24px]" />
               <p className="text-lg">Barber <span className="text-gray-500">etc...</span></p>
             </div>
           </motion.div>
@@ -64,7 +59,7 @@ const HeroSection = () => {
             custom={1} // Delay index 1
             className="sm:w-[400px]"
           >
-            <img src={logodesign} alt="Logo" />
+            <img src="/logodesign.png" alt="Logo" />
           </motion.div>
 
           {/* 3️⃣ Tagline */}

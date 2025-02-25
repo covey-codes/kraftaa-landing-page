@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import dashboard from "../assets/images/dashboardpic.jpg";
 import { headers } from "../Constants"; // Import headers
 
 const GetInTouchSection = () => {
@@ -45,7 +44,7 @@ const GetInTouchSection = () => {
         className="mx-auto sm:w-[105%] md:w-[85%] lg:w-[90%]"
       >
         <img
-          src={dashboard}
+          src="/dashboardpic.jpg"
           alt="Dashboard"
           className="mx-auto w-full max-h-[800px] object-contain"
         />

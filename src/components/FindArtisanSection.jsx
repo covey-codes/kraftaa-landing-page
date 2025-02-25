@@ -1,19 +1,19 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-
-import available from "../assets/images/available.png";
-import booked from "../assets/images/Booked.png";
 import { headers } from "../Constants"; // Adjust the path as needed
 
 const FindArtisanSection = () => {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true });
+  const desktopRef = useRef(null);
+  const mobileRef = useRef(null);
+
+  const isDesktopInView = useInView(desktopRef, { once: true });
+  const isMobileInView = useInView(mobileRef, { once: true });
 
   return (
     <>
       {/* Desktop View */}
       <div
-        ref={sectionRef}
+        ref={desktopRef}
         className="relative hidden lg:block bg-cover bg-center h-[900px] mb-[20px] mt-[-370px] w-full"
         style={{ backgroundImage: `url("/Pattern.jpg")` }}
       >
@@ -21,23 +21,23 @@ const FindArtisanSection = () => {
           <motion.div
             className="mt-[150px] flex"
             initial={{ opacity: 0, x: 100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            animate={isDesktopInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <div className="relative flex">
               {/* First Image */}
               <div className="w-[700px]">
-                <img className="w-[900px]" src={available} alt="img" />
+                <img className="w-[900px]" src="/available.png" alt="img" />
               </div>
 
               {/* Animated Booked Image */}
               <motion.div
                 className="w-[250px] absolute top-[-85px] right-[-80px]"
                 initial={{ opacity: 0, scale: 0.5 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                animate={isDesktopInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-                <img src={booked} alt="checkmark" />
+                <img src="/Booked.png" alt="checkmark" />
               </motion.div>
             </div>
 
@@ -63,14 +63,14 @@ const FindArtisanSection = () => {
 
       {/* Mobile View */}
       <div
-        ref={sectionRef}
+        ref={mobileRef}
         className="relative lg:hidden flex justify-center flex-col bg-cover overflow-hidden bg-center h-auto py-20 px-5"
         style={{ backgroundImage: `url("/Pattern.jpg")` }}
       >
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isMobileInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <p className="text-3xl font-bold m-5">
@@ -89,20 +89,20 @@ const FindArtisanSection = () => {
         <motion.div
           className="mt-20 w-[700px] flex justify-center"
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          animate={isMobileInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <img src={available} alt="" />
+          <img src="/available.png" alt="" />
         </motion.div>
 
         {/* Animated Booked Image for Mobile */}
         <motion.div
           className="w-[230px] top-[-580px] left-[450px] relative"
           initial={{ opacity: 0, rotate: -20 }}
-          animate={isInView ? { opacity: 1, rotate: 0 } : {}}
+          animate={isMobileInView ? { opacity: 1, rotate: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <img src={booked} alt="booked" />
+          <img src="/Booked.png" alt="booked" />
         </motion.div>
       </div>
     </>

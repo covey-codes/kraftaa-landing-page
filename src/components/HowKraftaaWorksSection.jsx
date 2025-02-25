@@ -1,8 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { headers } from "../Constants";
-import forartisan from "../assets/images/forartisan.png";
-import forclient from "../assets/images/forclient.png";
-import svg from "../assets/pattern.svg";
+
 
 const HowKraftaaWorksSection = () => {
   const [currentTab, setCurrentTab] = useState("client");
@@ -35,14 +33,14 @@ const HowKraftaaWorksSection = () => {
       {/* Desktop View */}
       <div className="relative hidden lg:flex justify-center mt-[200px]">
         <img
-          src={svg}
+          src="/pattern.svg"
           alt="Background Left"
           className={`absolute top-[300px] left-0 h-full w-auto transform -translate-x-1/4 transition-all duration-1000 ${
             isVisible ? "translate-x-0 opacity-100" : "opacity-0"
           }`}
         />
         <img
-          src={svg}
+          src="/pattern.svg"
           alt="Background Right"
           className={`absolute top-[400px] right-0 h-full w-auto transform translate-x-1/4 transition-all duration-1000 ${
             isVisible ? "translate-x-0 opacity-100" : "opacity-0"
@@ -58,8 +56,8 @@ const HowKraftaaWorksSection = () => {
             {headers.find((h) => h.key === "howKraftaaWorks")?.title}
           </h2>
           <div className="flex justify-center mb-[100px] gap-10">
-            <img src={forclient} alt="Step 1" className="w-[500px] h-auto rounded-lg" />
-            <img src={forartisan} alt="Step 2" className="w-[500px] h-auto rounded-lg" />
+            <img src="/forclient.png" alt="Step 1" className="w-[500px] h-auto rounded-lg" />
+            <img src="/forartisan.png" alt="Step 2" className="w-[500px] h-auto rounded-lg" />
           </div>
           <button className="text-white bg-[#1D1A3A] w-[200px] h-[70px] rounded-full">Get Started</button>
         </div>

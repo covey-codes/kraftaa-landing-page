@@ -1,9 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion"; // Import Framer Motion
-import logo from "../assets/images/logo.png";
-import home from "../assets/images/home.png";
-import services from "../assets/images/services.png";
-import client from "../assets/images/client.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,7 +30,7 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }} // Smooth transition
       className="flex justify-between overflow-hidden h-[80px] md:h-[80px] sm:h-[65px] mt-5 mx-5 rounded-full shadow-lg items-center px-10 py-5 bg-[#6828B0]"
     >
-      <img src={logo} alt="Logo" className="h-12" />
+      <img src="/logo.png" alt="Logo" className="h-12" />
 
       {/* Mobile Menu Button */}
       <div className="md:hidden">
@@ -78,15 +74,15 @@ const Navbar = () => {
         >
           <ul className="flex flex-col space-y-4 text-[#ABB0C0] text-sm text-center">
             <li className="flex items-center space-x-2 hover:underline cursor-pointer">
-              <img src={home} alt="Home" className="w-5 h-5" />
+              <img src="/home.png" alt="Home" className="w-5 h-5" />
               <span>Home</span>
             </li>
             <li className="flex items-center space-x-2 hover:underline cursor-pointer">
-              <img src={services} alt="Services" className="w-5 h-5" />
+              <img src="/services.png" alt="Services" className="w-5 h-5" />
               <span>Services</span>
             </li>
             <li className="flex items-center space-x-2 hover:underline cursor-pointer">
-              <img src={client} alt="Top Client" className="w-5 h-5" />
+              <img src="/client.png" alt="Top Client" className="w-5 h-5" />
               <span>Top Client</span>
             </li>
           </ul>
