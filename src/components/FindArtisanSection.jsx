@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import bgImage from "../assets/images/Pattern.jpg";
+
 import available from "../assets/images/available.png";
 import booked from "../assets/images/Booked.png";
 import { headers } from "../Constants"; // Adjust the path as needed
@@ -15,9 +15,7 @@ const FindArtisanSection = () => {
       <div
         ref={sectionRef}
         className="relative hidden lg:block bg-cover bg-center h-[900px] mb-[20px] mt-[-370px] w-full"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-        }}
+        style={{ backgroundImage: `url("/Pattern.jpg")` }}
       >
         <div className="flex justify-center">
           <motion.div
@@ -67,9 +65,7 @@ const FindArtisanSection = () => {
       <div
         ref={sectionRef}
         className="relative lg:hidden flex justify-center flex-col bg-cover overflow-hidden bg-center h-auto py-20 px-5"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-        }}
+        style={{ backgroundImage: `url("/Pattern.jpg")` }}
       >
         <motion.div
           className="text-center"
