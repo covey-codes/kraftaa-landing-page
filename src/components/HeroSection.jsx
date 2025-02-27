@@ -14,15 +14,15 @@ const HeroSection = () => {
 
   return (
     <div
-   className="relative bg-cover bg-center sm:h-[800px] lg:h-[950px] overflow-hidden w-full"
+   className="relative bg-cover bg-center sm:max-h-[800px] lg:h-[950px] overflow-hidden w-full"
    style={{ backgroundImage: `url("/Pattern.jpg")` }}
  >
 
       <Navbar />
 
       {/* Image Container */}
-      <div className="relative flex justify-center mt-[100px] sm:mt-[40px]">
-        <img src="/second.png" alt="Second Image" className="lg:w-[800px] sm:w-[600px]" />
+      <div className="relative flex justify-center mb-[200px] mt-[200px] m-5">
+        <img src="/second.png" alt="Second Image" className="lg:max-w-[800px] sm:w-[500px]"/>
 
         {/* Overlayed Content */}
         <div className="absolute top-[20%] left-[10%] w-[80%] flex flex-col justify-center items-center gap-4">
@@ -33,10 +33,10 @@ const HeroSection = () => {
             initial="hidden"
             animate="visible"
             custom={0} // Delay index 0
-            className="p-4 bg-white border text-black font-semibold rounded-[50px] sm:h-[70px] lg:h-[80px] sm:w-[80%] lg:w-[35%] lg:mt-[70px] md:w-[600px] flex flex-row items-center"
+            className="p-4 bg-white border text-black font-semibold rounded-[50px] lg:h-[80px] h-10 lg:w-[35%] lg:mt-[70px] md:w-[600px] flex flex-row items-center"
           >
             {/* Find Artisan Section */}
-            <div className="flex flex-row items-center pl-5 pr-[50px] gap-1">
+            <div className="flex flex-row items-center sm:pr-[50px]">
               <img src="/locationmark.png" alt="Location" className="w-[30px] h-[30px]" />
               <p className="text-lg">Find Artisan</p>
             </div>
