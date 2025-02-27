@@ -14,18 +14,18 @@ const HeroSection = () => {
 
   return (
     <div
-   className="relative bg-cover bg-center sm:max-h-[800px] lg:h-[950px] overflow-hidden w-full"
+   className="relative bg-cover bg-center max-h-[1000px] overflow-hidden w-full"
    style={{ backgroundImage: `url("/Pattern.jpg")` }}
  >
 
       <Navbar />
 
       {/* Image Container */}
-      <div className="relative flex justify-center mb-[200px] mt-[200px] m-5">
-        <img src="/second.png" alt="Second Image" className="lg:max-w-[800px] sm:w-[500px]"/>
+      <div className="relative flex justify-center mb-[150px] mt-[150px] m-5 max-w-[100%]">
+        <img src="/second.png" alt="Second Image" className="lg:w-[600px]"/>
 
         {/* Overlayed Content */}
-        <div className="absolute top-[20%] left-[10%] w-[80%] flex flex-col justify-center items-center gap-4">
+        <div className="absolute top-[15%] w-[70%] flex flex-col justify-center items-center gap-4">
           
           {/* 1️⃣ White Box */}
           <motion.div
@@ -33,21 +33,22 @@ const HeroSection = () => {
             initial="hidden"
             animate="visible"
             custom={0} // Delay index 0
-            className="p-4 bg-white border text-black font-semibold rounded-[50px] lg:h-[80px] h-10 lg:w-[35%] lg:mt-[70px] md:w-[600px] flex flex-row items-center"
+            className=" bg-white border text-black font-semibold rounded-[50px] lg:h-14 h-10 p-5 lg:w-[400px] mt-[20px] lg:mt-[60px] md:w-[600px] flex flex-row items-center justify-between gap-4"
+
           >
             {/* Find Artisan Section */}
-            <div className="flex flex-row items-center sm:pr-[50px]">
-              <img src="/locationmark.png" alt="Location" className="w-[30px] h-[30px]" />
-              <p className="text-lg">Find Artisan</p>
+            <div className="flex flex-row items-center gap-1">
+              <img src="/locationmark.png" alt="Location" className="w-[20px] h-[20px]" />
+              <p className="text-sm lg:text-lg  whitespace-nowrap">Find Artisan</p>
             </div>
 
             {/* Divider */}
-            <div className="hidden sm:block w-[1px] h-[30px] bg-gray-300"></div>
+            <div className=" hidden lg:block w-[2px] h-[30px] bg-gray-300"></div>
 
             {/* Category Section */}
             <div className="flex flex-row pl-[30px] items-center gap-1">
-              <img src="/clipper.svg" alt="Category Icon" className="w-[24px] h-[24px]" />
-              <p className="text-lg">Barber <span className="text-gray-500">etc...</span></p>
+              <img src="/clipper.svg" alt="Category Icon" className="w-[20px] h-[20px]" />
+              <p className="text-sm lg:text-lg  whitespace-nowrap">Barber <span className="text-gray-500">etc...</span></p>
             </div>
           </motion.div>
 
@@ -57,7 +58,7 @@ const HeroSection = () => {
             initial="hidden"
             animate="visible"
             custom={1} // Delay index 1
-            className="sm:w-[400px]"
+            className="w-[200px] lg:w-[400px]"
           >
             <img src="/logodesign.png" alt="Logo" />
           </motion.div>
@@ -68,7 +69,7 @@ const HeroSection = () => {
             initial="hidden"
             animate="visible"
             custom={2} // Delay index 2
-            className="text-[#5C6378] text-center font-semibold"
+            className="text-[#5C6378] text-center font-semibold text-sm lg:text-lg"
           >
             <p>Your Personal Connection to Local Experts</p>
           </motion.div>
@@ -79,15 +80,15 @@ const HeroSection = () => {
             initial="hidden"
             animate="visible"
             custom={3} // Delay index 3
-            className="mt-[5px] flex justify-center items-center relative"
+            className=" flex justify-center items-center relative"
           >
             {/* Outer Purple Border */}
-            <div className="absolute w-[200px] h-[60px] border-2 border-[#8407BA] rounded-full"></div>
+            <div className="absolute lg:w-[200px] w-[150px] lg:h-[60px] h-[50px] border-2 border-[#8407BA] rounded-full"></div>
 
             {/* Button (Expands on Hover) */}
             <button className="relative bg-gradient-to-r from-[#8407BA] to-[#6828B0] text-white 
-                cursor-pointer rounded-full w-[150px] h-[50px] transition-all duration-500 
-                hover:w-[200px] hover:h-[60px] flex items-center justify-center">
+                cursor-pointer rounded-full lg:w-[150px] w-[100px] lg:h-[50px] h-[40px] transition-all duration-500 
+                lg:hover:w-[200px] hover:w-[150px] text-sm p-4 whitespace-nowrap font-semibold lg:hover:h-[60px] hover:h-[50px] flex items-center justify-center">
               Get Started
             </button>
           </motion.div>

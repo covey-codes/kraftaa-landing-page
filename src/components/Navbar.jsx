@@ -28,12 +28,12 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }} // Start position (hidden above)
       animate={{ y: 0, opacity: 1 }} // End position (fully visible)
       transition={{ duration: 0.6, ease: "easeOut" }} // Smooth transition
-      className="flex justify-between overflow-hidden min-h-[80px] md:min-h-[80px] sm:min-h-[65px] mt-5 mx-5 rounded-full shadow-lg items-center px-10 py-5 bg-[#6828B0]"
+      className="flex justify-between overflow-hidden mt-5 mx-5 rounded-full shadow-lg items-center px-5 py-2 bg-[#6828B0]"
     >
       <img src="/logo.png" alt="Logo" className="h-12" />
 
       {/* Mobile Menu Button */}
-      <div className="lg:hidden">
+      <div className="lg:hidden md:hidden">
         <button
           ref={iconRef}
           onClick={() => setIsMenuOpen((prev) => !prev)}
