@@ -10,6 +10,7 @@ export const headers = [
       title: (
         <>
           Get in touch with the best <span className="text-[#6828B0]">Artisans</span> that
+          <br />
           offer <span className="text-[#6828B0]">Quality</span> services
         </>
       ),

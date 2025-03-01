@@ -41,7 +41,7 @@ const GetInTouchSection = () => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"} // Animate when in view
         custom={1}
-        className="mx-auto sm:w-[105%] md:w-[85%] lg:w-[90%]"
+        className="mx-auto w-[90%]"
       >
         <img
           src="/dashboardpic.jpg"
