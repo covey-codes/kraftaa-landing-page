@@ -25,7 +25,7 @@ const HeroSection = () => {
         <img src="/second.png" alt="Second Image" className="lg:w-[600px]"/>
 
         {/* Overlayed Content */}
-        <div className="absolute top-[15%] w-[70%] flex flex-col justify-center items-center gap-4">
+        <div className="absolute top-[15%] w-[70%] flex flex-col justify-center items-center gap-3">
           
           {/* 1️⃣ White Box */}
           <motion.div
@@ -37,7 +37,7 @@ const HeroSection = () => {
 
           >
             {/* Find Artisan Section */}
-            <div className="flex flex-row items-center gap-1">
+            <div className="flex flex-row items-center gap-2">
               <img src="/locationmark.png" alt="Location" className="w-[20px] h-[20px]" />
               <p className="text-sm lg:text-lg  whitespace-nowrap">Find Artisan</p>
             </div>
@@ -58,7 +58,7 @@ const HeroSection = () => {
             initial="hidden"
             animate="visible"
             custom={1} // Delay index 1
-            className="w-[200px] lg:w-[400px]"
+            className="w-[250px] lg:w-[400px]"
           >
             <img src="/logodesign.png" alt="Logo" />
           </motion.div>
@@ -69,7 +69,7 @@ const HeroSection = () => {
             initial="hidden"
             animate="visible"
             custom={2} // Delay index 2
-            className="text-[#5C6378] text-center font-semibold text-sm lg:text-lg"
+            className="text-[#5C6378] text-center whitespace-nowrap font-semibold text-sm lg:text-lg"
           >
             <p>Your Personal Connection to Local Experts</p>
           </motion.div>
@@ -87,7 +87,7 @@ const HeroSection = () => {
 
             {/* Button (Expands on Hover) */}
             <button className="relative bg-gradient-to-r from-[#8407BA] to-[#6828B0] text-white 
-                cursor-pointer rounded-full lg:w-[150px] w-[100px] lg:h-[50px] h-[40px] transition-all duration-500 
+                cursor-pointer rounded-full lg:w-[150px] w-[110px] lg:h-[50px] h-[40px] transition-all duration-500 
                 lg:hover:w-[200px] hover:w-[150px] text-sm p-4 whitespace-nowrap font-semibold lg:hover:h-[60px] hover:h-[50px] flex items-center justify-center">
               Get Started
             </button>

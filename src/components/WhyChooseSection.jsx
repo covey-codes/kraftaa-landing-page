@@ -70,7 +70,7 @@ const WhyChoose = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             viewport={{ once: true }}
             onClick={prevSlide}
-            className="absolute sm:top-[470px] sm:left-[530px] top-1/2 lg:left-[80px] transform -translate-y-1/2 bg-[#B1FA63] bg-opacity-70 text-white px-4 py-2 rounded-full flex items-center justify-center w-12 h-12"
+            className="absolute  transform -translate-y-1/2 bg-[#B1FA63] bg-opacity-70 text-white px-4 py-2 rounded-full flex items-center justify-center w-12 h-12"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="white" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
