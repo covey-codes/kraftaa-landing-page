@@ -73,12 +73,12 @@ const FindArtisanSection = () => {
           animate={isMobileInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <p className="text-3xl font-bold m-5">
+          <p className="text-2xl text-nowrap font-bold m-5">
             {headers.find((header) => header.key === "findArtisan")?.title}
           </p>
 
-          <p className="text-xl">
-            You can easily find skilled artisans based on your location. <br />
+          <p className="text-1xl md:2xl">
+            You can easily find skilled artisans based on your location.
             Whether you're at home or at work, simply search for the
             services you need and connect with trusted professionals
             nearby.
@@ -87,7 +87,7 @@ const FindArtisanSection = () => {
 
         {/* Mobile Image */}
         <motion.div
-          className="mt-20 w-[700px] flex justify-center"
+          className="mt-20 w-[300px] flex justify-center"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isMobileInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -97,7 +97,7 @@ const FindArtisanSection = () => {
 
         {/* Animated Booked Image for Mobile */}
         <motion.div
-          className="w-[230px] top-[-580px] left-[450px] relative"
+          className="w-[150px] top-[-350px] left-[200px] relative"
           initial={{ opacity: 0, rotate: -20 }}
           animate={isMobileInView ? { opacity: 1, rotate: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}

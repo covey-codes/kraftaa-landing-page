@@ -23,7 +23,7 @@ const DownloadmobileSection = () => {
         <div className="w-[200px]">
           <img src="/kraftaalogo.png" alt="Kraftaa Logo" />
         </div>
-        <p className="text-black font-normal md:text-2xl md:font-medium sm:text-xl">
+        <p className="text-black text-center font-normal md:text-2xl md:font-medium sm:text-xl">
           Download Kraftaa mobile app for easy tracking...
         </p>
         <div className="mt-[40px] flex justify-center w-full">

@@ -66,11 +66,11 @@ const HowKraftaaWorksSection = () => {
       {/* Mobile View */}
       <div className="flex justify-center">
         <div
-          className={`bg-[#B1FA63] lg:hidden h-[550px] flex flex-col items-center text-center w-[90%] py-10 px-5 border-4 border-[#B1FA63] rounded-2xl transition-all duration-1000 ${
+          className={`bg-[#B1FA63] lg:hidden h-[550px] flex flex-col items-center text-center w-[90%] py-10 px-5 border-4 border-[#B1FA63] rounded-[50px] transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl font-bold text-[#1D1A3A] mb-8">
+          <h2 className="text-2xl md:3xl text-nowrap font-bold text-[#1D1A3A] mb-5">
             {headers.find((h) => h.key === "howKraftaaWorks")?.title}
           </h2>
 
@@ -80,8 +80,8 @@ const HowKraftaaWorksSection = () => {
               className="flex w-[200%] transition-transform duration-500 ease-in-out"
               style={{ transform: currentTab === "client" ? "translateX(0)" : "translateX(-50%)" }}
             >
-              <div className="w-[50%] flex-shrink-0 rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-3">
-                <div className="bg-white text-[#1D1A3A] font-bold w-[95%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-40px] mb-[30px]">
+              <div className="w-[50%] flex-shrink-0 rounded-[50px] min-h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center ">
+                <div className="bg-white text-[#1D1A3A] font-bold w-[95%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-20px] mb-[20px]">
                   <p>For Client</p>
                 </div>
                 <ul className="text-left w-full px-4 space-y-2">
@@ -91,8 +91,8 @@ const HowKraftaaWorksSection = () => {
                 </ul>
               </div>
 
-              <div className="w-[50%] flex-shrink-0 rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-3">
-                <div className="bg-white text-[#1D1A3A] font-bold w-[95%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-40px] mb-[30px]">
+              <div className="w-[50%] flex-shrink-0 rounded-[50px] min-h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center">
+                <div className="bg-white text-[#1D1A3A] font-bold w-[95%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-20px] mb-[20px]">
                   <p>For Artisan</p>
                 </div>
                 <ul className="text-left w-full px-4 space-y-2">
