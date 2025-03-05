@@ -33,7 +33,7 @@ const WhyChoose = () => {
             viewport={{ once: true }}
             className="text-center mb-7"
           >
-            <p className="sm:text-4xl mb-[100px] font-bold">{header.title}</p>
+            <p className="text-2xl md:text-3xl lg:text-4xl mb-[50px] font-bold">{header.title}</p>
           </motion.div>
         ) : null
       )}
