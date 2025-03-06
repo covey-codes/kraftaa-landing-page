@@ -25,7 +25,7 @@ const AnyServicesSection = () => {
                 variants={slideInVariants}
               />
             </div>
-            <p className="mt-6 text-base text-[#1D1A3A]">
+            <p className="mt-6 text-base  text-[#1D1A3A]">
               With <span className="font-bold text-[#6828B0]">Kraftaa</span>, you will find a wide range of services you need whether at home or at work. You can book from anywhere.
             </p>
           </motion.div>
@@ -53,22 +53,22 @@ const AnyServicesSection = () => {
       </div>
 
       {/* Desktop Version (Only visible on larger screens) */}
-      <div className="hidden md:block overflow-hidden bg-[#060624] h-[1500px]">
+      <div className="hidden lg:block overflow-hidden bg-[#060624] h-[1500px]">
         <div className="h-[20%] bg-white"></div>
         <div className="h-[60%] bg-[#1D1A3A] relative">
           <div className="absolute top-[-20%] left-1/2 transform -translate-x-1/2 bg-[#B1FA63] border-2 border-[#1EAC23] w-[90%] h-[100%] rounded-3xl shadow-lg grid grid-cols-2 grid-rows-2 p-[30px]">
             <motion.div initial="hidden" animate="visible" variants={slideInVariants} className="flex -mt-24 ml-[90px] flex-col justify-center">
-              <p className="text-6xl font-bold text-[#1D1A3A]">
-                Any <span className="text-[#6828B0]">service</span> you need <br /> all in one <span className="text-[#6828B0]">place</span>
+              <p className="lg:text-5xl text-nowrap font-bold text-[#1D1A3A]">
+                Any <span className="text-[#6828B0]">service</span><br /> you need <br /> all in one <br /> <span className="text-[#6828B0]">place</span>
               </p>
             </motion.div>
             <motion.div initial="hidden" animate="visible" variants={slideInVariants} className="flex flex-col justify-center">
-              <p className="text-3xl -mt-20 font-semibold text-[#1D1A3A]">
+              <p className="text-[30px] -mt-20 font-semibold text-[#1D1A3A]">
                 With <span className="font-bold text-[#6828B0]">Kraftaa</span>, you will find a wide range of services you need whether at home or at work. You can book from anywhere.
               </p>
             </motion.div>
-            <motion.div initial="hidden" animate="visible" variants={slideInVariants} className="-mt-20 flex justify-center">
-              <img src="/Categg.png" alt="Services" className="w-[70%]" />
+            <motion.div initial="hidden" animate="visible" variants={slideInVariants} className="-mt-20 w-full flex justify-center">
+              <img src="/Categg.png" alt="Services" className="w-[70%] h-[70%] mt-[100px]" />
             </motion.div>
             <motion.div initial="hidden" animate="visible" variants={slideInVariants} className="-mt-[35px]">
               <input

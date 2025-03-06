@@ -70,7 +70,7 @@ const Navbar = () => {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="absolute top-16 right-5 w-[300px] bg-white rounded-lg shadow-lg p-5 flex flex-col items-center md:hidden"
+          className="absolute top-16 right-5 w-[200px] bg-white rounded-lg shadow-lg p-3 flex flex-col items-center md:hidden"
         >
           <ul className="flex flex-col space-y-4 text-[#ABB0C0] text-sm text-center">
             <li className="flex items-center space-x-2 hover:underline cursor-pointer">
