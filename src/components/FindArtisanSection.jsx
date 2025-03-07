@@ -14,25 +14,25 @@ const FindArtisanSection = () => {
       {/* Desktop View */}
       <div
         ref={desktopRef}
-        className="relative hidden lg:block bg-cover bg-center h-[900px]  mt-[-370px] overflow-hidden"
+        className="relative hidden lg:block bg-cover bg-center h-[900px] mb-[20px] mt-[-370px] w-full"
         style={{ backgroundImage: `url("/Pattern.jpg")` }}
       >
-        <div className="flex">
+        <div className="flex justify-center">
           <motion.div
-            className="mt-[150px] m-10 flex"
+            className="mt-[150px] flex"
             initial={{ opacity: 0, x: 100 }}
             animate={isDesktopInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <div className="relative flex">
               {/* First Image */}
-              <div className="w-[400px]">
-                <img className="w-[900px] md:w-[400px]" src="/available.png" alt="img" />
+              <div className="w-[700px]">
+                <img className="w-[900px]" src="/available.png" alt="img" />
               </div>
 
               {/* Animated Booked Image */}
               <motion.div
-                className="w-[200px] absolute top-[-75px] right-[-70px]"
+                className="w-[250px] absolute top-[-85px] right-[-80px]"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={isDesktopInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.5 }}
@@ -42,18 +42,18 @@ const FindArtisanSection = () => {
             </div>
 
             <div className="text-center">
-              <p className="text-4xl lg:6xl font-bold mb-10">
+              <p className="text-4xl lg:text-6xl font-bold m-10 mb-20">
                 {headers.find((header) => header.key === "findArtisan")?.title}
               </p>
 
-              <p className="text-[20px] mb-5 ">
+              <p className="text-2xl mb-10 lg:text-3xl">
                 You can easily find skilled artisans based on <br />
                 your location. Whether you're at home or at <br />
                 work, simply search for the services you need <br />
                 and connect with trusted professionals nearby.
               </p>
 
-              <button className="m-[50px] text-2xl text-white bg-[#6828B0] p-[20px] rounded-full w-[500px]">
+              <button className="m-[70px] text-2xl text-white bg-[#6828B0] p-[20px] rounded-full w-[700px]">
                 Find nearby artisan
               </button>
             </div>

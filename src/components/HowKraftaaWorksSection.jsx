@@ -1,130 +1,88 @@
-import { useState, useRef, useEffect } from "react";
-import { headers } from "../Constants";
+import React from "react";
+import { motion } from "framer-motion";
 
+const slideInVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
-const HowKraftaaWorksSection = () => {
-  const [currentTab, setCurrentTab] = useState("client");
-  const sectionRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
+const AnyServicesSection = () => {
   return (
-    <div ref={sectionRef} className="overflow-hidden">
-      {/* Desktop View */}
-      <div className="relative hidden lg:flex justify-center mt-[200px]">
-        <img
-          src="/pattern.svg"
-          alt="Background Left"
-          className={`absolute top-[300px] left-0 h-full w-auto transform -translate-x-1/4 transition-all duration-1000 ${
-            isVisible ? "translate-x-0 opacity-100" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/pattern.svg"
-          alt="Background Right"
-          className={`absolute top-[400px] right-0 h-full w-auto transform translate-x-1/4 transition-all duration-1000 ${
-            isVisible ? "translate-x-0 opacity-100" : "opacity-0"
-          }`}
-        />
+    <>
+      {/* Mobile & Tablet Version */}
+      <div className="bg-[rgb(29,26,58)] bg-opacity-100 overflow-x-clip lg:hidden py-10 px-6">
+        <div className="relative mx-auto bg-[#B1FA63] border-2 border-[#1EAC23] rounded-3xl w-[90%] max-w-[600px] shadow-lg py-10 px-6 grid gap-6">
+          <motion.div initial="hidden" animate="visible" variants={slideInVariants} className="text-center">
+            <p className="text-2xl md:text-3xl font-bold text-[#1D1A3A] leading-tight">
+              Any <span className="text-[#6828B0]">service</span> you need all in one <span className="text-[#6828B0]">place</span>
+            </p>
+            <motion.img src="/Categg.png" alt="Services" className="w-[80%] md:w-[60%] max-w-[300px] mx-auto mt-5" variants={slideInVariants} />
+            <p className="mt-6 text-base md:text-lg text-[#1D1A3A]">
+              With <span className="font-bold text-[#6828B0]">Kraftaa</span>, you will find a wide range of services you need whether at home or at work. You can book from anywhere.
+            </p>
+          </motion.div>
 
-        <div
-          className={`bg-[#B1FA63] relative w-[70%] border-4 border-[#1EAC23] rounded-2xl py-16 h-[800px] text-center transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <h2 className="text-5xl font-bold mb-[100px] text-[#1D1A3A]">
-            {headers.find((h) => h.key === "howKraftaaWorks")?.title}
-          </h2>
-          <div className="flex justify-center mb-[100px] gap-10">
-            <img src="/forclient.png" alt="Step 1" className="w-[500px] h-auto rounded-lg" />
-            <img src="/forartisan.png" alt="Step 2" className="w-[500px] h-auto rounded-lg" />
-          </div>
-          <button className="text-white bg-[#1D1A3A] w-[200px] h-[70px] rounded-full">Get Started</button>
-        </div>
-      </div>
-
-      {/* Mobile View */}
-      <div className="flex justify-center">
-        <div
-          className={`bg-[#B1FA63] lg:hidden h-[550px] flex flex-col items-center text-center w-[90%] py-10 px-5 border-4 border-[#B1FA63] rounded-[50px] transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <h2 className="text-2xl md:3xl text-nowrap font-bold text-[#1D1A3A] mb-5">
-            {headers.find((h) => h.key === "howKraftaaWorks")?.title}
-          </h2>
-
-          {/* Content */}
-          <div className="relative w-full overflow-hidden">
-            <div
-              className="flex w-[200%] transition-transform duration-500 ease-in-out"
-              style={{ transform: currentTab === "client" ? "translateX(0)" : "translateX(-50%)" }}
-            >
-              <div className="w-[50%] flex-shrink-0 rounded-[50px] min-h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center ">
-                <div className="bg-white text-[#1D1A3A] font-bold w-[95%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-20px] mb-[20px]">
-                  <p>For Client</p>
-                </div>
-                <ul className="text-left w-full px-4 space-y-2">
-                  <li>1. Sign up as a client</li>
-                  <li>2. Search for artisans near you</li>
-                  <li>3. Get quality services from home or anywhere</li>
-                </ul>
-              </div>
-
-              <div className="w-[50%] flex-shrink-0 rounded-[50px] min-h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center">
-                <div className="bg-white text-[#1D1A3A] font-bold w-[95%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-20px] mb-[20px]">
-                  <p>For Artisan</p>
-                </div>
-                <ul className="text-left w-full px-4 space-y-2">
-                  <li>1. Sign up as an artisan</li>
-                  <li>2. Properly set up your profile so clients can see you</li>
-                  <li>3. Get paid when you finish your job</li>
-                </ul>
-              </div>
+          {/* Input field & Artisan list */}
+          <motion.div initial="hidden" animate="visible" variants={slideInVariants} className="grid gap-4">
+            <input
+              type="text"
+              placeholder="Find artisan..."
+              className="w-full p-2 bg-transparent border-2 border-black rounded-full focus:outline-none focus:ring-2 focus:ring-black"
+            />
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+              {["Generator repair", "Fridge repair", "CCTV installation", "Gardening", "Laundry", "Electrician", "Plumber", "Painter", "Tailor", "Cook", "More..."].map((service, index) => (
+                <motion.div
+                  key={index}
+                  className={`px-3 py-2 rounded-full text-xs md:text-sm cursor-pointer border-2 border-black text-center ${service === "More..." ? "bg-white brightness-110" : "bg-[#B1FA63] text-black"}`}
+                  variants={slideInVariants}
+                >
+                  {service}
+                </motion.div>
+              ))}
             </div>
-          </div>
-
-          {/* Navigation Dots */}
-          <div className="flex space-x-4 mt-4">
-            <button
-              onClick={() => setCurrentTab("client")}
-              className={`h-3 w-3 rounded-full transition-all ${
-                currentTab === "client" ? "bg-white w-6" : "bg-[#1D1A3A] bg-opacity-50"
-              }`}
-            />
-            <button
-              onClick={() => setCurrentTab("artisan")}
-              className={`h-3 w-3 rounded-full transition-all ${
-                currentTab === "artisan" ? "bg-white w-6" : "bg-[#1D1A3A] bg-opacity-50"
-              }`}
-            />
-          </div>
-
-          <button className="text-white bg-[#1D1A3A] w-[200px] max-w-[300px] h-[50px] font-bold rounded-full mt-6">Get Started</button>
+          </motion.div>
         </div>
       </div>
-    </div>
+
+      {/* Desktop Version */}
+      <div className="hidden lg:grid bg-[#060624] h-[1500px] place-items-center">
+        <div className="h-[20%] bg-white w-full"></div>
+        <div className="h-[60%] bg-[#1D1A3A] relative w-full grid place-items-center">
+          <div className="absolute top-[-20%] bg-[#B1FA63] border-2 border-[#1EAC23] w-[90%] max-w-[1200px] h-auto rounded-3xl shadow-lg grid grid-cols-2 gap-10 p-[30px]">
+            <motion.div initial="hidden" animate="visible" variants={slideInVariants} className="self-center">
+              <p className="text-5xl font-bold text-[#1D1A3A]">
+                Any <span className="text-[#6828B0]">service</span><br /> you need <br /> all in one <br /> <span className="text-[#6828B0]">place</span>
+              </p>
+            </motion.div>
+            <motion.div initial="hidden" animate="visible" variants={slideInVariants} className="self-center">
+              <p className="text-[30px] font-semibold text-[#1D1A3A]">
+                With <span className="font-bold text-[#6828B0]">Kraftaa</span>, you will find a wide range of services you need whether at home or at work. You can book from anywhere.
+              </p>
+            </motion.div>
+            <motion.img src="/Categg.png" alt="Services" className="w-[70%] ml-auto mr-auto h-auto" initial="hidden" animate="visible" variants={slideInVariants} />
+            <motion.div initial="hidden" animate="visible" variants={slideInVariants} className="grid gap-4">
+              <input
+                type="text"
+                placeholder="Find artisan..."
+                className="w-full p-2 bg-transparent border-2 border-black rounded-full focus:outline-none focus:ring-2 focus:ring-black"
+              />
+              <div className="grid grid-cols-3 gap-2">
+                {["Generator repair", "Fridge repair", "CCTV installation", "Cobler", "Gardening", "Hair dresser", "Laundry", "Pedicure", "Electrician", "Plumber", "Barber", "Cleaner", "Tailor", "Baker", "Painter", "Welder", "Nail tech", "Cook", "Carpenter", "More..."].map((service, index) => (
+                  <motion.div
+                    key={index}
+                    className={`lg:px-7 hover:bg-white/50 duration-500 px-4 py-2 rounded-full text-sm cursor-pointer border-2 border-black text-center ${service === "More..." ? "bg-white brightness-110" : "bg-[#B1FA63] text-black"}`}
+                    variants={slideInVariants}
+                  >
+                    {service}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
-export default HowKraftaaWorksSection;
+export default AnyServicesSection;
