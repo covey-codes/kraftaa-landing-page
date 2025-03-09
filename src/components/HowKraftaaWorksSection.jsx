@@ -1,6 +1,11 @@
 import { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import { headers } from "../Constants";
 
+const slideInVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 const HowKraftaaWorksSection = () => {
   const [currentTab, setCurrentTab] = useState("client");
@@ -29,7 +34,7 @@ const HowKraftaaWorksSection = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="overflow-hidden">
+    <motion.div ref={sectionRef} initial="hidden" animate={isVisible ? "visible" : "hidden"} variants={slideInVariants} className="overflow-hidden">
       {/* Desktop View */}
       <div className="relative hidden lg:flex justify-center mt-[200px]">
         <img
@@ -123,7 +128,7 @@ const HowKraftaaWorksSection = () => {
           <button className="text-white bg-[#1D1A3A] w-[200px] max-w-[300px] h-[50px] font-bold rounded-full mt-6">Get Started</button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
