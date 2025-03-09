@@ -14,7 +14,7 @@ const FindArtisanSection = () => {
       {/* Desktop View */}
       <div
         ref={desktopRef}
-        className="relative hidden lg:block bg-cover bg-center h-[900px] mb-[20px] mt-[-370px] w-full"
+        className="relative hidden lg:block bg-cover bg-center h-[900px] lg:mt-[-370px] w-full"
         style={{ backgroundImage: `url("/Pattern.jpg")` }}
       >
         <div className="flex justify-center">
@@ -26,8 +26,8 @@ const FindArtisanSection = () => {
           >
             <div className="relative flex">
               {/* First Image */}
-              <div className="w-[700px]">
-                <img className="w-[900px]" src="/available.png" alt="img" />
+              <div className="w-full max-w-[700px]">
+                <img className="w-full h-auto" src="/available.png" alt="img" />
               </div>
 
               {/* Animated Booked Image */}
@@ -53,7 +53,7 @@ const FindArtisanSection = () => {
                 and connect with trusted professionals nearby.
               </p>
 
-              <button className="m-[70px] text-2xl text-white bg-[#6828B0] p-[20px] rounded-full w-[700px]">
+              <button className="m-10 text-2xl text-white bg-[#6828B0] p-[20px] rounded-full w-full max-w-[90%] sm:max-w-[300px]">
                 Find nearby artisan
               </button>
             </div>
@@ -61,7 +61,7 @@ const FindArtisanSection = () => {
         </div>
       </div>
 
-      {/* Mobile View */}
+      {/* Mobile & Medium View */}
       <div
         ref={mobileRef}
         className="relative lg:hidden flex justify-center flex-col bg-cover overflow-hidden bg-center h-auto py-20 px-5"
@@ -85,24 +85,24 @@ const FindArtisanSection = () => {
           </p>
         </motion.div>
 
-        {/* Mobile Image */}
+        {/* Centered Mobile & Medium Image */}
         <motion.div
-          className="mt-20 w-[300px] flex justify-center"
+          className="mt-20 w-full max-w-[300px] flex justify-center mx-auto"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isMobileInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <img src="/available.png" alt="" />
+          <img className="w-full h-auto" src="/available.png" alt="" />
         </motion.div>
 
-        {/* Animated Booked Image for Mobile */}
+        {/* Positioned Animated Booked Image for Mobile & Medium */}
         <motion.div
-          className="w-[150px] top-[-350px] left-[200px] relative"
+          className="w-[150px] absolute top-[] left-[230px]"
           initial={{ opacity: 0, rotate: -20 }}
           animate={isMobileInView ? { opacity: 1, rotate: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <img src="/Booked.png" alt="booked" />
+          <img src="/Booked.png" alt="booked" className="w-full" />
         </motion.div>
       </div>
     </>
