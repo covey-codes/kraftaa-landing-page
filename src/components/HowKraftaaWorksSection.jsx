@@ -10,6 +10,7 @@ const slideInVariants = {
 const HowKraftaaWorksSection = () => {
   const [currentTab, setCurrentTab] = useState("client");
   const sectionRef = useRef(null);
+  const carouselRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -33,8 +34,26 @@ const HowKraftaaWorksSection = () => {
     };
   }, []);
 
+  const handleScroll = (event) => {
+    setCurrentTab((prevTab) => {
+      if (event.deltaY > 0 && prevTab !== "artisan") {
+        return "artisan";
+      } else if (event.deltaY < 0 && prevTab !== "client") {
+        return "client";
+      }
+      return prevTab; // Prevent unnecessary re-renders
+    });
+  };
+  
+
   return (
-    <motion.div ref={sectionRef} initial="hidden" animate={isVisible ? "visible" : "hidden"} variants={slideInVariants} className="overflow-hidden">
+    <motion.div
+      ref={sectionRef}
+      initial="hidden"
+      animate={isVisible ? "visible" : "hidden"}
+      variants={slideInVariants}
+      className="overflow-hidden"
+    >
       {/* Desktop View */}
       <div className="relative hidden lg:flex justify-center mt-[200px]">
         <img
@@ -71,6 +90,8 @@ const HowKraftaaWorksSection = () => {
       {/* Mobile View */}
       <div className="flex justify-center">
         <div
+          ref={carouselRef}
+          onWheel={handleScroll}
           className={`bg-[#B1FA63] lg:hidden h-[550px] flex flex-col items-center text-center w-[90%] py-10 px-5 border-4 border-[#B1FA63] rounded-2xl transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
@@ -85,7 +106,7 @@ const HowKraftaaWorksSection = () => {
               className="flex w-[200%] transition-transform duration-500 ease-in-out"
               style={{ transform: currentTab === "client" ? "translateX(0)" : "translateX(-50%)" }}
             >
-              <div className="w-[50%]  rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-5">
+              <div className="w-[50%] rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-5">
                 <div className="bg-white text-[#1D1A3A] font-bold w-[100%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-20px] mb-[30px]">
                   <p>For Client</p>
                 </div>
@@ -96,8 +117,8 @@ const HowKraftaaWorksSection = () => {
                 </ul>
               </div>
 
-              <div className="w-[50%]  rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-3">
-                <div className="bg-white text-[#1D1A3A] font-bold w-[100s%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-20px] mb-[30px]">
+              <div className="w-[50%] rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-3">
+                <div className="bg-white text-[#1D1A3A] font-bold w-[100%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-20px] mb-[30px]">
                   <p>For Artisan</p>
                 </div>
                 <ul className="text-left w-full px-4 space-y-2">
@@ -111,18 +132,8 @@ const HowKraftaaWorksSection = () => {
 
           {/* Navigation Dots */}
           <div className="flex space-x-4 mt-4">
-            <button
-              onClick={() => setCurrentTab("client")}
-              className={`h-3 w-3 rounded-full transition-all ${
-                currentTab === "client" ? "bg-white w-6" : "bg-[#1D1A3A] bg-opacity-50"
-              }`}
-            />
-            <button
-              onClick={() => setCurrentTab("artisan")}
-              className={`h-3 w-3 rounded-full transition-all ${
-                currentTab === "artisan" ? "bg-white w-6" : "bg-[#1D1A3A] bg-opacity-50"
-              }`}
-            />
+            <button onClick={() => setCurrentTab("client")} className={`h-3 w-3 rounded-full transition-all ${currentTab === "client" ? "bg-white w-6" : "bg-[#1D1A3A] bg-opacity-50"}`} />
+            <button onClick={() => setCurrentTab("artisan")} className={`h-3 w-3 rounded-full transition-all ${currentTab === "artisan" ? "bg-white w-6" : "bg-[#1D1A3A] bg-opacity-50"}`} />
           </div>
 
           <button className="text-white bg-[#1D1A3A] w-[200px] max-w-[300px] h-[50px] font-bold rounded-full mt-6">Get Started</button>
