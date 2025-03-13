@@ -85,8 +85,8 @@ const HowKraftaaWorksSection = () => {
               className="flex w-[200%] transition-transform duration-500 ease-in-out"
               style={{ transform: currentTab === "client" ? "translateX(0)" : "translateX(-50%)" }}
             >
-              <div className="w-[50%] flex-shrink-0 rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-3">
-                <div className="bg-white text-[#1D1A3A] font-bold w-[95%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-40px] mb-[30px]">
+              <div className="w-[50%]  rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-5">
+                <div className="bg-white text-[#1D1A3A] font-bold w-[100%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-20px] mb-[30px]">
                   <p>For Client</p>
                 </div>
                 <ul className="text-left w-full px-4 space-y-2">
@@ -96,8 +96,8 @@ const HowKraftaaWorksSection = () => {
                 </ul>
               </div>
 
-              <div className="w-[50%] flex-shrink-0 rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-3">
-                <div className="bg-white text-[#1D1A3A] font-bold w-[95%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-40px] mb-[30px]">
+              <div className="w-[50%]  rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-3">
+                <div className="bg-white text-[#1D1A3A] font-bold w-[100s%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-20px] mb-[30px]">
                   <p>For Artisan</p>
                 </div>
                 <ul className="text-left w-full px-4 space-y-2">

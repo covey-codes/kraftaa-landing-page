@@ -21,7 +21,7 @@ const HeroSection = () => {
 
       {/* Image Container */}
       <div className="relative flex justify-center mb-[150px] mt-[150px] m-5 w-full max-w-[600px] mx-auto md:max-w-[600px] lg:max-w-full">
-        <img src="/second.png" alt="Second Image" className="w-full md:w-[500px] lg:w-[600px]" />
+        <img src="/second.png" alt="Second Image" className="w-[90%] md:w-[500px] lg:w-[600px]" />
 
         {/* Overlayed Content - Centered */}
         <div className="absolute top-[15%] left-1/2 transform -translate-x-1/2 w-[70%] flex flex-col justify-center items-center gap-3">

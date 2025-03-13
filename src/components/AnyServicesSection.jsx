@@ -82,7 +82,7 @@ const AnyServicesSection = () => {
       <div className="hidden lg:block overflow-hidden bg-[#060624] h-[1500px]">
         <div className="h-[20%] bg-white"></div>
         <div className="h-[60%] bg-[#1D1A3A] relative">
-          <div className="absolute top-[-20%] left-1/2 transform -translate-x-1/2 bg-[#B1FA63] border-2 border-[#1EAC23] w-[90%] h-[100%] rounded-3xl shadow-lg grid grid-cols-2 gap-6 p-[30px]">
+          <div className="absolute top-[-20%] left-1/2 transform -translate-x-1/2 bg-[#B1FA63] border-2 border-[#1EAC23] w-[90%] h-[100%] rounded-3xl shadow-lg grid md:grid-cols-1 lg:grid-cols-2 gap-6 p-[30px]">
             <motion.div 
               initial="hidden" 
               whileInView="visible" 

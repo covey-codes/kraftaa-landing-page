@@ -87,12 +87,12 @@ const FindArtisanSection = () => {
 
         {/* Centered Mobile & Medium Image */}
         <motion.div
-          className="mt-20 w-full max-w-[300px] flex justify-center mx-auto"
+          className="mt-20 w-full max-w-[500px] flex justify-center mx-auto"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isMobileInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <img className="w-full h-auto" src="/available.png" alt="" />
+          <img className="w-[90%] h-auto" src="/available.png" alt="" />
         </motion.div>
 
         {/* Positioned Animated Booked Image for Mobile & Medium */}
