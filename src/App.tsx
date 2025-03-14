@@ -1,3 +1,4 @@
+import React from "react";
 import HeroSection from "./components/HeroSection";
 import GetInTouchSection from "./components/GetInTouchSection";
 import WhyChooseSection from "./components/WhyChooseSection";
@@ -7,9 +8,9 @@ import HowKraftaaWorksSection from "./components/HowKraftaaWorksSection";
 import DownloadmobileSection from "./components/DownloadmobileSection";
 import FooterSection from "./components/FooterSection";
 
-const App = () => {
+const App: React.FC = () => {
   return (
-    <div>
+    <>
       <HeroSection />
       <GetInTouchSection />
       <WhyChooseSection />
@@ -18,7 +19,7 @@ const App = () => {
       <HowKraftaaWorksSection />
       <DownloadmobileSection />
       <FooterSection />
-    </div>
+    </>
   );
 };
 

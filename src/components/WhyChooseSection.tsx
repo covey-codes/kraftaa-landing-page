@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import img1 from "/carouselfirst.png";
 import img2 from "/carouselsecond.png";
 import img3 from "/carouselthird.png";
-import { headers } from "../Constants"; // Import headers
+import { headers } from "../Constants/index.tsx"; // Import headers
 
 const images = [img1, img2, img3];
 
@@ -33,7 +33,9 @@ const WhyChoose = () => {
             viewport={{ once: true }}
             className="text-center mb-7"
           >
-            <p className="text-2xl md:text-3xl lg:text-4xl mb-[50px] font-bold">{header.title}</p>
+            <p className="text-2xl md:text-3xl lg:text-4xl mb-[50px] font-bold">
+              {header.title}
+            </p>
           </motion.div>
         ) : null
       )}
@@ -54,9 +56,16 @@ const WhyChoose = () => {
           }}
         >
           {images.map((image, index) => (
-            <div key={index} className="w-full flex-shrink-0 flex justify-center">
+            <div
+              key={index}
+              className="w-full flex-shrink-0 flex justify-center"
+            >
               <div className="w-[70%] mx-[90px] h-[70%]">
-                <img src={image} alt={`carousel-item-${index}`} className="w-full object-cover" />
+                <img
+                  src={image}
+                  alt={`carousel-item-${index}`}
+                  className="w-full object-cover"
+                />
               </div>
             </div>
           ))}
@@ -73,8 +82,19 @@ const WhyChoose = () => {
             onClick={prevSlide}
             className="bg-[#B1FA63] bg-opacity-70 text-white p-3 rounded-full flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="white" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="white"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
           </motion.button>
 
@@ -87,12 +107,22 @@ const WhyChoose = () => {
             onClick={nextSlide}
             className="bg-[#6828B0] bg-opacity-70 text-white p-3 rounded-full flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="white" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="white"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </motion.button>
         </div>
-
       </motion.div>
     </div>
   );

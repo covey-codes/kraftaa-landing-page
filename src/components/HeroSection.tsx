@@ -1,17 +1,18 @@
-import { motion } from "framer-motion";
+import React from "react";
+import { motion, Variants } from "framer-motion";
 import Navbar from "./Navbar";
 
-const HeroSection = () => {
-  // Animation variants for sliding in from the right
-  const slideInVariant = {
-    hidden: { x: 100, opacity: 0 },
-    visible: (i) => ({
-      x: 0,
-      opacity: 1,
-      transition: { duration: 0.8, delay: i * 0.3, ease: "easeOut" },
-    }),
-  };
+// Define animation variants
+const slideInVariant: Variants = {
+  hidden: { x: 100, opacity: 0 },
+  visible: (custom: number) => ({
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.8, delay: custom * 0.3, ease: "easeOut" },
+  }),
+};
 
+const HeroSection: React.FC = () => {
   return (
     <div
       className="relative bg-cover bg-center max-h-[1000px] overflow-hidden w-full"
@@ -34,7 +35,7 @@ const HeroSection = () => {
             variants={slideInVariant}
             initial="hidden"
             animate="visible"
-            custom={0} // Delay index 0
+            custom={0}
             className="bg-white border text-black font-semibold rounded-[50px] lg:h-14 h-10 p-5 lg:w-[400px] mt-[20px] lg:mt-[60px] md:w-[600px] flex flex-row items-center justify-between gap-4"
           >
             {/* Find Artisan Section */}
@@ -70,7 +71,7 @@ const HeroSection = () => {
             variants={slideInVariant}
             initial="hidden"
             animate="visible"
-            custom={1} // Delay index 1
+            custom={1}
             className="w-[80%] md:w-[250px] lg:w-[400px]"
           >
             <img src="/logodesign.png" alt="Logo" />
@@ -81,7 +82,7 @@ const HeroSection = () => {
             variants={slideInVariant}
             initial="hidden"
             animate="visible"
-            custom={2} // Delay index 2
+            custom={2}
             className="text-[#5C6378] text-center whitespace-nowrap font-semibold text-sm md:text-base lg:text-lg"
           >
             <p>Your Personal Connection to Local Experts</p>
@@ -92,7 +93,7 @@ const HeroSection = () => {
             variants={slideInVariant}
             initial="hidden"
             animate="visible"
-            custom={3} // Delay index 3
+            custom={3}
             className="flex justify-center items-center relative"
           >
             {/* Outer Purple Border */}
