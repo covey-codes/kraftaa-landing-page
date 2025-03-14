@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { headers } from "../Constants";
 
@@ -12,6 +12,7 @@ const HowKraftaaWorksSection = () => {
   const sectionRef = useRef(null);
   const carouselRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const scrollTimeout = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -34,17 +35,22 @@ const HowKraftaaWorksSection = () => {
     };
   }, []);
 
-  const handleScroll = (event) => {
+  const handleScroll = useCallback((event) => {
+    if (scrollTimeout.current) return; // Prevent excessive triggering
+    
     setCurrentTab((prevTab) => {
       if (event.deltaY > 0 && prevTab !== "artisan") {
         return "artisan";
       } else if (event.deltaY < 0 && prevTab !== "client") {
         return "client";
       }
-      return prevTab; // Prevent unnecessary re-renders
+      return prevTab;
     });
-  };
-  
+
+    scrollTimeout.current = setTimeout(() => {
+      scrollTimeout.current = null;
+    }, 500); // 500ms debounce to prevent rapid switching
+  }, []);
 
   return (
     <motion.div

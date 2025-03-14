@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 
 const HeroSection = () => {
@@ -21,11 +21,14 @@ const HeroSection = () => {
 
       {/* Image Container */}
       <div className="relative flex justify-center mb-[150px] mt-[150px] m-5 w-full max-w-[600px] mx-auto md:max-w-[600px] lg:max-w-full">
-        <img src="/second.png" alt="Second Image" className="w-[90%] md:w-[500px] lg:w-[600px]" />
+        <img
+          src="/second.png"
+          alt="Second Image"
+          className="w-[90%] md:w-[500px] lg:w-[600px]"
+        />
 
         {/* Overlayed Content - Centered */}
         <div className="absolute top-[15%] left-1/2 transform -translate-x-1/2 w-[70%] flex flex-col justify-center items-center gap-3">
-          
           {/* 1️⃣ White Box */}
           <motion.div
             variants={slideInVariant}
@@ -36,8 +39,14 @@ const HeroSection = () => {
           >
             {/* Find Artisan Section */}
             <div className="flex flex-row items-center gap-2">
-              <img src="/locationmark.png" alt="Location" className="w-[20px] h-[20px]" />
-              <p className="text-sm md:text-base lg:text-lg whitespace-nowrap">Find Artisan</p>
+              <img
+                src="/locationmark.png"
+                alt="Location"
+                className="w-[20px] h-[20px]"
+              />
+              <p className="text-sm md:text-base lg:text-lg whitespace-nowrap">
+                Find Artisan
+              </p>
             </div>
 
             {/* Divider */}
@@ -45,7 +54,11 @@ const HeroSection = () => {
 
             {/* Category Section */}
             <div className="flex flex-row pl-[30px] items-center gap-1">
-              <img src="/clipper.svg" alt="Category Icon" className="w-[20px] h-[20px]" />
+              <img
+                src="/clipper.svg"
+                alt="Category Icon"
+                className="w-[20px] h-[20px]"
+              />
               <p className="text-sm md:text-base lg:text-lg whitespace-nowrap">
                 Barber <span className="text-gray-500">etc...</span>
               </p>
@@ -90,7 +103,6 @@ const HeroSection = () => {
               Get Started
             </button>
           </motion.div>
-
         </div>
       </div>
     </div>
