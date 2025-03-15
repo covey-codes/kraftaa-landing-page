@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { slideInVariants } from "../Animations/anyServicesVariants";
+import { artisanData, artisanDataLg } from "../Constants/artisanData";
 
 const AnyServicesSection: React.FC = () => {
   return (
@@ -47,19 +48,7 @@ const AnyServicesSection: React.FC = () => {
               className="w-full p-2 bg-transparent border-2 border-black rounded-full focus:outline-none focus:ring-2 focus:ring-black"
             />
             <div className="flex flex-wrap justify-center gap-2 mt-4">
-              {[
-                "Generator repair",
-                "Fridge repair",
-                "CCTV installation",
-                "Gardening",
-                "Laundry",
-                "Electrician",
-                "Plumber",
-                "Painter",
-                "Tailor",
-                "Cook",
-                "More...",
-              ].map((service, index) => (
+              {artisanData.map((service, index) => (
                 <motion.div
                   key={index}
                   className={`px-3 py-2 rounded-full text-xs md:text-sm w-fit cursor-pointer border-2 border-black text-center ${
@@ -132,28 +121,7 @@ const AnyServicesSection: React.FC = () => {
                 className="w-full p-2 bg-transparent border-2 border-black rounded-full focus:outline-none focus:ring-2 focus:ring-black"
               />
               <div className="flex flex-wrap gap-2 mt-4 justify-center">
-                {[
-                  "Generator repair",
-                  "Fridge repair",
-                  "CCTV installation",
-                  "Cobler",
-                  "Gardening",
-                  "Hair dresser",
-                  "Laundry",
-                  "Pedicure",
-                  "Electrician",
-                  "Plumber",
-                  "Barber",
-                  "Cleaner",
-                  "Tailor",
-                  "Baker",
-                  "Painter",
-                  "Welder",
-                  "Nail tech",
-                  "Cook",
-                  "Carpenter",
-                  "More...",
-                ].map((service, index) => (
+                {artisanDataLg.map((service, index) => (
                   <motion.div
                     key={index}
                     className={`lg:px-7 hover:bg-white/50 duration-500 px-4 py-2 rounded-full text-sm w-fit cursor-pointer border-2 border-black text-center ${
