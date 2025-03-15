@@ -1,21 +1,18 @@
 import { motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
-import { headers } from "../Constants"; // ✅ Fixed Import Path
+import { headers } from "../Constants";
 
-// Define header type correctly
 interface Header {
   key: string;
-  title: React.ReactNode; // Allow JSX content in title
+  title: React.ReactNode;
 }
 
-// Ensure headers is correctly typed
-const typedHeaders: Header[] = headers as Header[]; // Explicitly cast headers
+const typedHeaders: Header[] = headers as Header[];
 
 const GetInTouchSection: React.FC = () => {
-  const ref = useRef<HTMLDivElement>(null); // ✅ Fixed Type
-  const isInView = useInView(ref, { once: true, margin: "-100px" }); // ✅ Corrected useInView Usage
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // ✅ Explicitly define `custom` type in Variants
   const slideInVariant: Variants = {
     hidden: { x: 100, opacity: 0 },
     visible: (custom?: number) => ({
@@ -29,14 +26,12 @@ const GetInTouchSection: React.FC = () => {
     }),
   };
 
-  // Find the correct header by key
   const headerText: React.ReactNode =
     typedHeaders.find((header) => header.key === "getInTouch")?.title ||
     "Get In Touch";
 
   return (
     <div ref={ref} className="px-6 py-12 overflow-hidden">
-      {/* Animated Text */}
       <motion.div
         variants={slideInVariant}
         initial="hidden"
@@ -49,7 +44,6 @@ const GetInTouchSection: React.FC = () => {
         </p>
       </motion.div>
 
-      {/* Animated Image */}
       <motion.div
         variants={slideInVariant}
         initial="hidden"

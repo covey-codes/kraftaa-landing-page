@@ -1,12 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { slideInVariants } from "../Animations/anyServicesVariants";
 
-const slideInVariants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
-
-const AnyServicesSection = () => {
+const AnyServicesSection: React.FC = () => {
   return (
     <>
       {/* Mobile & Tablet Version */}

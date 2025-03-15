@@ -1,37 +1,23 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion"; // Import Framer Motion
+import React from "react";
+import { motion } from "framer-motion";
+import { useNavbar } from "../Constants/useNavbar";
+import {
+  navbarAnimation,
+  menuAnimation,
+} from "../Animations/navbarAnimationVariants";
 
 const Navbar: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const menuRef = useRef<HTMLDivElement | null>(null);
-  const iconRef = useRef<HTMLButtonElement | null>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node) &&
-        iconRef.current &&
-        !iconRef.current.contains(event.target as Node)
-      ) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  const { isMenuOpen, setIsMenuOpen, menuRef, iconRef } = useNavbar();
 
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      initial={navbarAnimation.initial}
+      animate={navbarAnimation.animate}
+      transition={navbarAnimation.transition}
       className="flex justify-between overflow-hidden mt-5 mx-5 rounded-full shadow-lg items-center px-5 py-2 bg-[#6828B0]"
     >
       <img src="/logo.png" alt="Logo" className="h-12" />
 
-      {/* Mobile Menu Button */}
       <div className="lg:hidden md:hidden">
         <button
           ref={iconRef}
@@ -72,25 +58,22 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* Desktop Menu */}
       <ul className="hidden md:flex space-x-10 text-white text-base font-bold">
         <li className="cursor-pointer hover:text-[#B1FA63]">Home</li>
         <li className="cursor-pointer hover:text-[#B1FA63]">Services</li>
         <li className="cursor-pointer hover:text-[#B1FA63]">Top Client</li>
       </ul>
 
-      {/* Sign Up Button */}
       <button className="hidden md:block px-6 py-2 bg-black text-white font-bold text-sm rounded-full">
         Sign Up
       </button>
 
-      {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
         <motion.div
           ref={menuRef}
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
+          initial={menuAnimation.initial}
+          animate={menuAnimation.animate}
+          transition={menuAnimation.transition}
           className="absolute top-16 right-5 w-[200px] bg-white rounded-lg shadow-lg p-3 flex flex-col items-center md:hidden"
         >
           <ul className="flex flex-col space-y-4 text-[#ABB0C0] text-sm text-center">

@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { headers } from "../Constants"; // Adjust the path as needed
+import { headers } from "../Constants";
 
 const FindArtisanSection = () => {
   const desktopRef = useRef(null);
@@ -11,7 +11,6 @@ const FindArtisanSection = () => {
 
   return (
     <>
-      {/* Desktop View */}
       <div
         ref={desktopRef}
         className="relative hidden lg:block bg-cover bg-center h-[900px] lg:mt-[-370px] w-full"
@@ -25,12 +24,10 @@ const FindArtisanSection = () => {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <div className="relative flex">
-              {/* First Image */}
               <div className="w-full max-w-[700px]">
                 <img className="w-full h-auto" src="/available.png" alt="img" />
               </div>
 
-              {/* Animated Booked Image */}
               <motion.div
                 className="w-[250px] absolute top-[-85px] right-[-80px]"
                 initial={{ opacity: 0, scale: 0.5 }}
@@ -61,7 +58,6 @@ const FindArtisanSection = () => {
         </div>
       </div>
 
-      {/* Mobile & Medium View */}
       <div
         ref={mobileRef}
         className="relative lg:hidden flex justify-center flex-col bg-cover overflow-hidden bg-center h-auto py-20 px-5"
@@ -84,7 +80,6 @@ const FindArtisanSection = () => {
           </p>
         </motion.div>
 
-        {/* Centered Mobile & Medium Image */}
         <motion.div
           className="mt-20 w-full max-w-[500px] flex justify-center mx-auto"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -94,7 +89,6 @@ const FindArtisanSection = () => {
           <img className="w-[90%] h-auto" src="/available.png" alt="" />
         </motion.div>
 
-        {/* Positioned Animated Booked Image for Mobile & Medium */}
         <motion.div
           className="w-[150px] absolute top-[] left-[230px]"
           initial={{ opacity: 0, rotate: -20 }}

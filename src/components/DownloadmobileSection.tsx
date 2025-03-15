@@ -6,10 +6,12 @@ import tiktok from "/tiktok.svg";
 import linkedin from "/linkedin.svg";
 import twitter from "/twitter.svg";
 
-
 const DownloadmobileSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
+
+  // Social media icons array
+  const socialIcons = [facebook, instagram, tiktok, linkedin, twitter];
 
   return (
     <div ref={ref}>
@@ -33,8 +35,8 @@ const DownloadmobileSection = () => {
           </div>
         </div>
         <div className="flex justify-between m-[40px] w-[200px]">
-          {[facebook, instagram, tiktok, linkedin, twitter].map((icon, index) => (
-            <img key={index} src={icon} alt="Social Media" />
+          {socialIcons.map((icon, index) => (
+            <img key={index} src={icon} alt={`Social Media ${index + 1}`} />
           ))}
         </div>
       </motion.div>
@@ -57,13 +59,21 @@ const DownloadmobileSection = () => {
             <img src="/mobile.png" alt="Mobile Preview" />
           </div>
           <div className="flex flex-col items-center">
-            <img className="mb-6 w-[500px]" src="/googleplay.png" alt="Google Play" />
-            <img className="w-[500px]" src="/applestore.png" alt="Apple Store" />
+            <img
+              className="mb-6 w-[500px]"
+              src="/googleplay.png"
+              alt="Google Play"
+            />
+            <img
+              className="w-[500px]"
+              src="/applestore.png"
+              alt="Apple Store"
+            />
           </div>
         </div>
         <div className="flex justify-between mt-[50px] mb-10 w-[300px]">
-          {[facebook, instagram, tiktok, linkedin, twitter].map((icon, index) => (
-            <img key={index} src={icon} alt="Social Media" />
+          {socialIcons.map((icon, index) => (
+            <img key={index} src={icon} alt={`Social Media ${index + 1}`} />
           ))}
         </div>
       </motion.div>

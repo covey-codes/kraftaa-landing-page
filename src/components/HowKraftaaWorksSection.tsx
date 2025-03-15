@@ -1,56 +1,46 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
-import { headers } from "../Constants/index.tsx";
+import { slideInVariants } from "../Animations/howKraftaaWorksVariants";
+import { headers } from "../Constants/index";
 
-const slideInVariants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
+// Define possible tab values
+type Tab = "client" | "artisan";
 
 const HowKraftaaWorksSection = () => {
-  const [currentTab, setCurrentTab] = useState("client");
-  const sectionRef = useRef(null);
-  const carouselRef = useRef(null);
+  const [currentTab, setCurrentTab] = useState<Tab>("client");
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const carouselRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const scrollTimeout = useRef(null);
+  const scrollTimeout = useRef<number | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => setIsVisible(entry.isIntersecting),
       { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
   }, []);
 
-  const handleScroll = useCallback((event) => {
-    if (scrollTimeout.current) return; // Prevent excessive triggering
+  const handleScroll = useCallback(
+    (event: React.WheelEvent<HTMLDivElement>) => {
+      if (scrollTimeout.current) return;
 
-    setCurrentTab((prevTab) => {
-      if (event.deltaY > 0 && prevTab !== "artisan") {
-        return "artisan";
-      } else if (event.deltaY < 0 && prevTab !== "client") {
-        return "client";
-      }
-      return prevTab;
-    });
+      setCurrentTab((prevTab) =>
+        event.deltaY > 0 && prevTab !== "artisan"
+          ? "artisan"
+          : event.deltaY < 0 && prevTab !== "client"
+          ? "client"
+          : prevTab
+      );
 
-    scrollTimeout.current = setTimeout(() => {
-      scrollTimeout.current = null;
-    }, 500); // 500ms debounce to prevent rapid switching
-  }, []);
+      scrollTimeout.current = setTimeout(() => {
+        scrollTimeout.current = null;
+      }, 500);
+    },
+    []
+  );
 
   return (
     <motion.div
@@ -127,49 +117,34 @@ const HowKraftaaWorksSection = () => {
                     : "translateX(-50%)",
               }}
             >
-              <div className="w-[50%] rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-5">
-                <div className="bg-white text-[#1D1A3A] font-bold w-[100%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-20px] mb-[30px]">
-                  <p>For Client</p>
-                </div>
-                <ul className="text-left w-full px-4 space-y-2">
-                  <li>1. Sign up as a client</li>
-                  <li>2. Search for artisans near you</li>
-                  <li>3. Get quality services from home or anywhere</li>
-                </ul>
-              </div>
-
-              <div className="w-[50%] rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-3">
-                <div className="bg-white text-[#1D1A3A] font-bold w-[100%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-20px] mb-[30px]">
-                  <p>For Artisan</p>
-                </div>
-                <ul className="text-left w-full px-4 space-y-2">
-                  <li>1. Sign up as an artisan</li>
-                  <li>
-                    2. Properly set up your profile so clients can see you
-                  </li>
-                  <li>3. Get paid when you finish your job</li>
-                </ul>
-              </div>
+              <TabContent
+                title="For Client"
+                steps={[
+                  "Sign up as a client",
+                  "Search for artisans near you",
+                  "Get quality services from home or anywhere",
+                ]}
+              />
+              <TabContent
+                title="For Artisan"
+                steps={[
+                  "Sign up as an artisan",
+                  "Properly set up your profile so clients can see you",
+                  "Get paid when you finish your job",
+                ]}
+              />
             </div>
           </div>
 
           {/* Navigation Dots */}
           <div className="flex space-x-4 mt-4">
-            <button
+            <NavButton
+              isActive={currentTab === "client"}
               onClick={() => setCurrentTab("client")}
-              className={`h-3 w-3 rounded-full transition-all ${
-                currentTab === "client"
-                  ? "bg-white w-6"
-                  : "bg-[#1D1A3A] bg-opacity-50"
-              }`}
             />
-            <button
+            <NavButton
+              isActive={currentTab === "artisan"}
               onClick={() => setCurrentTab("artisan")}
-              className={`h-3 w-3 rounded-full transition-all ${
-                currentTab === "artisan"
-                  ? "bg-white w-6"
-                  : "bg-[#1D1A3A] bg-opacity-50"
-              }`}
             />
           </div>
 
@@ -181,5 +156,38 @@ const HowKraftaaWorksSection = () => {
     </motion.div>
   );
 };
+
+// Separate Components
+interface TabContentProps {
+  title: string;
+  steps: string[];
+}
+
+const TabContent = ({ title, steps }: TabContentProps) => (
+  <div className="w-[50%] rounded-[50px] h-[250px] bg-[#1D1A3A] text-white flex flex-col items-center justify-center py-5 px-5">
+    <div className="bg-white text-[#1D1A3A] font-bold w-[100%] h-[60px] flex items-center justify-center rounded-[50px] mt-[-20px] mb-[30px]">
+      <p>{title}</p>
+    </div>
+    <ul className="text-left w-full px-4 space-y-2">
+      {steps.map((step, index) => (
+        <li key={index}>{`${index + 1}. ${step}`}</li>
+      ))}
+    </ul>
+  </div>
+);
+
+interface NavButtonProps {
+  isActive: boolean;
+  onClick: () => void;
+}
+
+const NavButton = ({ isActive, onClick }: NavButtonProps) => (
+  <button
+    onClick={onClick}
+    className={`h-3 w-3 rounded-full transition-all ${
+      isActive ? "bg-white w-6" : "bg-[#1D1A3A] bg-opacity-50"
+    }`}
+  />
+);
 
 export default HowKraftaaWorksSection;

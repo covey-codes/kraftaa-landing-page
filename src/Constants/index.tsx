@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 interface Header {
   key: string;
-  title: ReactNode; // Ensures support for JSX and text
+  title: ReactNode;
 }
 
 export const headers: Header[] = [
