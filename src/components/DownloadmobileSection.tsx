@@ -1,21 +1,20 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import facebook from "/facebook.svg";
-import instagram from "/instagram.svg";
-import tiktok from "/tiktok.svg";
-import linkedin from "/linkedin.svg";
-import twitter from "/twitter.svg";
+
+const socialIcons = [
+  "/facebook.svg",
+  "/instagram.svg",
+  "/tiktok.svg",
+  "/linkedin.svg",
+  "/twitter.svg",
+];
 
 const DownloadmobileSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
-
-  // Social media icons array
-  const socialIcons = [facebook, instagram, tiktok, linkedin, twitter];
+  const inView = useInView(ref, { once: true });
 
   return (
     <div ref={ref}>
-      {/* MOBILE VIEW */}
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}
@@ -41,7 +40,6 @@ const DownloadmobileSection = () => {
         </div>
       </motion.div>
 
-      {/* DESKTOP VIEW */}
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}

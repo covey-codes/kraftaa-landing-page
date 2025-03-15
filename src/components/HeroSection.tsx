@@ -51,7 +51,6 @@ const HeroSection: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* 2️⃣ Logo */}
           <motion.div
             variants={slideInVariant}
             initial="hidden"

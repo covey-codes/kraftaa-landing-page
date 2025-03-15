@@ -5,7 +5,6 @@ import { slideInVariants } from "../Animations/anyServicesVariants";
 const AnyServicesSection: React.FC = () => {
   return (
     <>
-      {/* Mobile & Tablet Version */}
       <div className="bg-white h-[300px] overflow-hidden lg:hidden"></div>
       <div className="bg-[rgb(29,26,58)] bg-opacity-100 overflow-x-clip lg:hidden py-10 px-6">
         <div className="relative mx-auto top-[-150px] bg-[#B1FA63] border-2 border-[#1EAC23] rounded-3xl w-[90%] max-w-[600px] shadow-lg py-10 px-6">
@@ -34,7 +33,7 @@ const AnyServicesSection: React.FC = () => {
               at work. You can book from anywhere.
             </p>
           </motion.div>
-          {/* Input field & Artisan list */}
+
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -78,7 +77,6 @@ const AnyServicesSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Desktop Version */}
       <div className="hidden lg:block overflow-hidden bg-[#060624] h-[1500px]">
         <div className="h-[20%] bg-white"></div>
         <div className="h-[60%] bg-[#1D1A3A] relative">

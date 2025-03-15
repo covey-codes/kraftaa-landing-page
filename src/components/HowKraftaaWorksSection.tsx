@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { slideInVariants } from "../Animations/howKraftaaWorksVariants";
 import { headers } from "../Constants/index";
 
-// Define possible tab values
 type Tab = "client" | "artisan";
 
 const HowKraftaaWorksSection = () => {
@@ -50,7 +49,6 @@ const HowKraftaaWorksSection = () => {
       variants={slideInVariants}
       className="overflow-hidden"
     >
-      {/* Desktop View */}
       <div className="relative hidden lg:flex justify-center mt-[200px]">
         <img
           src="/pattern.svg"
@@ -93,7 +91,6 @@ const HowKraftaaWorksSection = () => {
         </div>
       </div>
 
-      {/* Mobile View */}
       <div className="flex justify-center">
         <div
           ref={carouselRef}
@@ -106,7 +103,6 @@ const HowKraftaaWorksSection = () => {
             {headers.find((h) => h.key === "howKraftaaWorks")?.title}
           </h2>
 
-          {/* Content */}
           <div className="relative w-full overflow-hidden">
             <div
               className="flex w-[200%] transition-transform duration-500 ease-in-out"
@@ -136,7 +132,6 @@ const HowKraftaaWorksSection = () => {
             </div>
           </div>
 
-          {/* Navigation Dots */}
           <div className="flex space-x-4 mt-4">
             <NavButton
               isActive={currentTab === "client"}
@@ -157,7 +152,6 @@ const HowKraftaaWorksSection = () => {
   );
 };
 
-// Separate Components
 interface TabContentProps {
   title: string;
   steps: string[];

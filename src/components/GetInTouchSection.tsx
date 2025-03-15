@@ -1,6 +1,7 @@
-import { motion, useInView, Variants } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { headers } from "../Constants";
+import { slideInVariant } from "../Animations/getInTouchVariants";
 
 interface Header {
   key: string;
@@ -12,19 +13,6 @@ const typedHeaders: Header[] = headers as Header[];
 const GetInTouchSection: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const slideInVariant: Variants = {
-    hidden: { x: 100, opacity: 0 },
-    visible: (custom?: number) => ({
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        delay: (custom ?? 0) * 0.3,
-        ease: "easeOut",
-      },
-    }),
-  };
 
   const headerText: React.ReactNode =
     typedHeaders.find((header) => header.key === "getInTouch")?.title ||

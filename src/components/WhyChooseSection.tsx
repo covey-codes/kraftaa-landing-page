@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import img1 from "/carouselfirst.png";
-import img2 from "/carouselsecond.png";
-import img3 from "/carouselthird.png";
 import { headers } from "../Constants/index";
 import { fadeInUpVariant, slideVariant } from "../Animations/whyChooseVariants";
 
-const images = [img1, img2, img3];
+const images = [
+  "/carouselfirst.png",
+  "/carouselsecond.png",
+  "/carouselthird.png",
+];
 
 const WhyChoose: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
