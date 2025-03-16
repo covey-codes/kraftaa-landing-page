@@ -1,7 +1,6 @@
 const FooterSection = () => {
   return (
     <>
-      {/* MOBILE VIEW */}
       <div className="lg:hidden bg-black h-[200px] flex flex-col overflow-hidden items-center justify-center">
         <img className="w-[200px]" src="/logo.png" alt="logo" />
         <p className="text-[#B1FA63] mb-3 text-sm">
@@ -17,7 +16,6 @@ const FooterSection = () => {
         </ul>
       </div>
 
-      {/* DESKTOP VIEW */}
       <div className="hidden lg:flex flex-col items-center bg-black h-[200px]">
         <img className="w-[200px]" src="/logo.png" alt="logo" />
         <p className="text-[#B1FA63] text-1xl">
